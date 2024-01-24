@@ -1,7 +1,7 @@
 {
-	"name": "hit",
+	"name": "hitArea2",
 	"plugin-id": "Sprite",
-	"sid": 503981761876093,
+	"sid": 480686426272058,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,13 +18,13 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 719868,
+						"imageSpriteId": 4644125,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					}
 				],
-				"sid": 449773256921998,
+				"sid": 798557377002590,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

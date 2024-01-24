@@ -48,13 +48,15 @@
 			"belt_bg",
 			"hittable",
 			"btn",
-			"hit",
+			"hitArea",
 			"Tilemap",
 			"Touch",
 			"audience_grid",
 			"Sprite",
 			"audience_color",
-			"score_txt"
+			"score_txt",
+			"player",
+			"hitArea2"
 		],
 		"subfolders": []
 	},
@@ -66,7 +68,7 @@
 	},
 	"layouts": {
 		"items": [
-			"Layout 1"
+			"Level01"
 		],
 		"subfolders": []
 	},

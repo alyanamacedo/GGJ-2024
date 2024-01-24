@@ -5,7 +5,7 @@
 			"eventType": "variable",
 			"name": "belt_speed",
 			"type": "number",
-			"initialValue": "200",
+			"initialValue": "500",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -71,6 +71,141 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "hitArea2",
+					"sid": 966667269282411,
+					"parameters": {
+						"object": "hittable"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 424290810686903,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "hittable",
+							"sid": 216855539399092,
+							"parameters": {
+								"instance-variable": "type",
+								"comparison": 0,
+								"value": "\"joke\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 790357106964651,
+							"parameters": {
+								"seconds": "1150/belt_speed-0.1"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "player",
+							"sid": 816548542125555,
+							"parameters": {
+								"animation": "\"Microphone\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 847864997615206,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "hittable",
+							"sid": 852828540231248,
+							"parameters": {
+								"instance-variable": "type",
+								"comparison": 0,
+								"value": "\"finaljoke\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 261607156336063,
+							"parameters": {
+								"seconds": "1150/belt_speed-0.1"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "player",
+							"sid": 754109820560408,
+							"parameters": {
+								"animation": "\"Punch\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 931829666363824,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "hittable",
+							"sid": 154601766677364,
+							"parameters": {
+								"instance-variable": "type",
+								"comparison": 0,
+								"value": "\"liker\""
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "hittable",
+							"sid": 601439933396676,
+							"parameters": {
+								"instance-variable": "type",
+								"comparison": 0,
+								"value": "\"hater\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 606520330430408,
+							"parameters": {
+								"seconds": "1150/belt_speed-0.1"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "player",
+							"sid": 302191035064817,
+							"parameters": {
+								"animation": "\"Hammer\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 894087580952664,
+					"isOrBlock": true
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
 					"id": "is-touching-object",
 					"objectClass": "Touch",
 					"sid": 949527205000067,
@@ -127,7 +262,7 @@
 					"conditions": [
 						{
 							"id": "is-overlapping-another-object",
-							"objectClass": "hit",
+							"objectClass": "hitArea",
 							"sid": 975833253934721,
 							"parameters": {
 								"object": "hittable"
@@ -151,6 +286,69 @@
 					],
 					"sid": 693674156368508,
 					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "hittable",
+									"sid": 596153582585372,
+									"parameters": {
+										"instance-variable": "type",
+										"comparison": 0,
+										"value": "\"joke\""
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "hittable",
+									"sid": 411746013792230,
+									"parameters": {
+										"instance-variable": "type",
+										"comparison": 0,
+										"value": "\"finaljoke\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "AudienceMeter",
+									"sid": 653468592539060,
+									"parameters": [
+										true,
+										"hittable.pts_audicence"
+									]
+								}
+							],
+							"sid": 530251147316566,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "hittable",
+									"sid": 905193415193363,
+									"parameters": {
+										"instance-variable": "type",
+										"comparison": 0,
+										"value": "\"liker\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "AudienceMeter",
+									"sid": 614197360050280,
+									"parameters": [
+										false,
+										"hittable.pts_audicence"
+									]
+								}
+							],
+							"sid": 797364665296656
+						},
 						{
 							"eventType": "block",
 							"conditions": [
@@ -193,69 +391,6 @@
 								}
 							],
 							"sid": 641998157229903
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "hittable",
-									"sid": 165231608127497,
-									"parameters": {
-										"instance-variable": "type",
-										"comparison": 0,
-										"value": "\"liker\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "AudienceMeter",
-									"sid": 112383634607401,
-									"parameters": [
-										false,
-										"hittable.pts_audicence"
-									]
-								}
-							],
-							"sid": 339803044493331
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "hittable",
-									"sid": 900298480186215,
-									"parameters": {
-										"instance-variable": "type",
-										"comparison": 0,
-										"value": "\"joke\""
-									}
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "hittable",
-									"sid": 222403748071015,
-									"parameters": {
-										"instance-variable": "type",
-										"comparison": 0,
-										"value": "\"finaljoke\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "AudienceMeter",
-									"sid": 933454726740905,
-									"parameters": [
-										true,
-										"hittable.pts_audicence"
-									]
-								}
-							],
-							"sid": 368060733145456,
-							"isOrBlock": true
 						}
 					]
 				},
