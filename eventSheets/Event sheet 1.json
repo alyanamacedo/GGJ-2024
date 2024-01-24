@@ -5,7 +5,7 @@
 			"eventType": "variable",
 			"name": "belt_speed",
 			"type": "number",
-			"initialValue": "500",
+			"initialValue": "200",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -31,7 +31,7 @@
 				},
 				{
 					"id": "set-x",
-					"objectClass": "haters",
+					"objectClass": "hittable",
 					"sid": 705195102046462,
 					"parameters": {
 						"x": "Self.X - belt_speed*dt"
@@ -130,46 +130,134 @@
 							"objectClass": "hit",
 							"sid": 975833253934721,
 							"parameters": {
-								"object": "haters"
+								"object": "hittable"
 							}
 						}
 					],
 					"actions": [
 						{
 							"id": "set-collisions-enabled",
-							"objectClass": "haters",
+							"objectClass": "hittable",
 							"sid": 856449701703534,
 							"parameters": {
 								"collisions": "disabled"
 							}
 						},
 						{
-							"id": "set-instvar-value",
-							"objectClass": "score_txt",
-							"sid": 469125871809675,
-							"parameters": {
-								"instance-variable": "score",
-								"value": "score_txt.score+haters.pts"
-							}
-						},
-						{
-							"id": "set-text",
-							"objectClass": "score_txt",
-							"sid": 346628958191546,
-							"parameters": {
-								"text": "\"pts\"&Functions.ScoreToText(score_txt.score)"
-							}
-						},
-						{
-							"callFunction": "AudienceMeter",
-							"sid": 352192971751046,
-							"parameters": [
-								true,
-								"10"
-							]
+							"id": "destroy",
+							"objectClass": "hittable",
+							"sid": 917245918580271
 						}
 					],
-					"sid": 693674156368508
+					"sid": 693674156368508,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "hittable",
+									"sid": 399694980922401,
+									"parameters": {
+										"instance-variable": "type",
+										"comparison": 0,
+										"value": "\"hater\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "score_txt",
+									"sid": 804803782579496,
+									"parameters": {
+										"instance-variable": "score",
+										"value": "score_txt.score+hittable.pts_score"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "score_txt",
+									"sid": 488608628667938,
+									"parameters": {
+										"text": "\"pts\"&Functions.ScoreToText(score_txt.score)"
+									}
+								},
+								{
+									"callFunction": "AudienceMeter",
+									"sid": 235483345604907,
+									"parameters": [
+										true,
+										"hittable.pts_audicence"
+									]
+								}
+							],
+							"sid": 641998157229903
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "hittable",
+									"sid": 165231608127497,
+									"parameters": {
+										"instance-variable": "type",
+										"comparison": 0,
+										"value": "\"liker\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "AudienceMeter",
+									"sid": 112383634607401,
+									"parameters": [
+										false,
+										"hittable.pts_audicence"
+									]
+								}
+							],
+							"sid": 339803044493331
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "hittable",
+									"sid": 900298480186215,
+									"parameters": {
+										"instance-variable": "type",
+										"comparison": 0,
+										"value": "\"joke\""
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "hittable",
+									"sid": 222403748071015,
+									"parameters": {
+										"instance-variable": "type",
+										"comparison": 0,
+										"value": "\"finaljoke\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "AudienceMeter",
+									"sid": 933454726740905,
+									"parameters": [
+										true,
+										"hittable.pts_audicence"
+									]
+								}
+							],
+							"sid": 368060733145456,
+							"isOrBlock": true
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -183,10 +271,10 @@
 					"actions": [
 						{
 							"callFunction": "AudienceMeter",
-							"sid": 715657745305778,
+							"sid": 211749795927238,
 							"parameters": [
 								false,
-								"10"
+								"20"
 							]
 						}
 					],

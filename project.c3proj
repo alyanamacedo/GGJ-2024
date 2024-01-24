@@ -46,7 +46,7 @@
 	"objectTypes": {
 		"items": [
 			"belt_bg",
-			"haters",
+			"hittable",
 			"btn",
 			"hit",
 			"Tilemap",
