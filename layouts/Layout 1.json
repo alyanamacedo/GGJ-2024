@@ -46,7 +46,7 @@
 					}
 				},
 				{
-					"type": "people",
+					"type": "haters",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Hater1",
@@ -55,7 +55,9 @@
 						"live-preview": false
 					},
 					"uid": 3,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"pts": 100
+					},
 					"behaviors": {},
 					"world": {
 						"x": 2100,
@@ -75,7 +77,7 @@
 					}
 				},
 				{
-					"type": "people",
+					"type": "haters",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Hater1",
@@ -84,7 +86,9 @@
 						"live-preview": false
 					},
 					"uid": 4,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"pts": 100
+					},
 					"behaviors": {},
 					"world": {
 						"x": 3600,
@@ -104,7 +108,7 @@
 					}
 				},
 				{
-					"type": "people",
+					"type": "haters",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Hater1",
@@ -113,7 +117,9 @@
 						"live-preview": false
 					},
 					"uid": 5,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"pts": 50
+					},
 					"behaviors": {},
 					"world": {
 						"x": 2550,
@@ -133,7 +139,7 @@
 					}
 				},
 				{
-					"type": "people",
+					"type": "haters",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Hater1",
@@ -142,7 +148,9 @@
 						"live-preview": false
 					},
 					"uid": 6,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"pts": 100
+					},
 					"behaviors": {},
 					"world": {
 						"x": 3000,
@@ -162,7 +170,7 @@
 					}
 				},
 				{
-					"type": "people",
+					"type": "haters",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Hater1",
@@ -171,7 +179,9 @@
 						"live-preview": false
 					},
 					"uid": 7,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"pts": 100
+					},
 					"behaviors": {},
 					"world": {
 						"x": 3300,
@@ -191,7 +201,7 @@
 					}
 				},
 				{
-					"type": "people",
+					"type": "haters",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Hater1",
@@ -200,7 +210,9 @@
 						"live-preview": false
 					},
 					"uid": 8,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"pts": 100
+					},
 					"behaviors": {},
 					"world": {
 						"x": 4200,
@@ -220,7 +232,7 @@
 					}
 				},
 				{
-					"type": "people",
+					"type": "haters",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Hater1",
@@ -229,7 +241,9 @@
 						"live-preview": false
 					},
 					"uid": 9,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"pts": 100
+					},
 					"behaviors": {},
 					"world": {
 						"x": 4350,
@@ -249,7 +263,7 @@
 					}
 				},
 				{
-					"type": "people",
+					"type": "haters",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Hater1",
@@ -258,7 +272,9 @@
 						"live-preview": false
 					},
 					"uid": 10,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"pts": 100
+					},
 					"behaviors": {},
 					"world": {
 						"x": 4500,
@@ -278,7 +294,7 @@
 					}
 				},
 				{
-					"type": "people",
+					"type": "haters",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Hater1",
@@ -287,7 +303,9 @@
 						"live-preview": false
 					},
 					"uid": 11,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"pts": 100
+					},
 					"behaviors": {},
 					"world": {
 						"x": 4950,
@@ -307,7 +325,7 @@
 					}
 				},
 				{
-					"type": "people",
+					"type": "haters",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Hater1",
@@ -316,7 +334,9 @@
 						"live-preview": false
 					},
 					"uid": 12,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"pts": 100
+					},
 					"behaviors": {},
 					"world": {
 						"x": 5100,
@@ -336,7 +356,7 @@
 					}
 				},
 				{
-					"type": "people",
+					"type": "haters",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Hater1",
@@ -345,7 +365,9 @@
 						"live-preview": false
 					},
 					"uid": 13,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"pts": 100
+					},
 					"behaviors": {},
 					"world": {
 						"x": 5400,
@@ -365,7 +387,7 @@
 					}
 				},
 				{
-					"type": "people",
+					"type": "haters",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Hater1",
@@ -374,7 +396,9 @@
 						"live-preview": false
 					},
 					"uid": 14,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"pts": 100
+					},
 					"behaviors": {},
 					"world": {
 						"x": 5700,
@@ -394,7 +418,7 @@
 					}
 				},
 				{
-					"type": "people",
+					"type": "haters",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Hater1",
@@ -403,7 +427,9 @@
 						"live-preview": false
 					},
 					"uid": 15,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"pts": 100
+					},
 					"behaviors": {},
 					"world": {
 						"x": 5850,
@@ -423,7 +449,7 @@
 					}
 				},
 				{
-					"type": "people",
+					"type": "haters",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Hater1",
@@ -432,7 +458,9 @@
 						"live-preview": false
 					},
 					"uid": 16,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"pts": 100
+					},
 					"behaviors": {},
 					"world": {
 						"x": 6150,
@@ -452,7 +480,7 @@
 					}
 				},
 				{
-					"type": "people",
+					"type": "haters",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Hater1",
@@ -461,7 +489,9 @@
 						"live-preview": false
 					},
 					"uid": 17,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"pts": 100
+					},
 					"behaviors": {},
 					"world": {
 						"x": 6750,
@@ -481,7 +511,7 @@
 					}
 				},
 				{
-					"type": "people",
+					"type": "haters",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Hater1",
@@ -490,7 +520,9 @@
 						"live-preview": false
 					},
 					"uid": 18,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"pts": 100
+					},
 					"behaviors": {},
 					"world": {
 						"x": 7350,
@@ -510,7 +542,7 @@
 					}
 				},
 				{
-					"type": "people",
+					"type": "haters",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Hater1",
@@ -519,7 +551,9 @@
 						"live-preview": false
 					},
 					"uid": 19,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"pts": 100
+					},
 					"behaviors": {},
 					"world": {
 						"x": 7800,
@@ -539,7 +573,7 @@
 					}
 				},
 				{
-					"type": "people",
+					"type": "haters",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Hater1",
@@ -548,7 +582,9 @@
 						"live-preview": false
 					},
 					"uid": 20,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"pts": 100
+					},
 					"behaviors": {},
 					"world": {
 						"x": 7950,
@@ -568,7 +604,7 @@
 					}
 				},
 				{
-					"type": "people",
+					"type": "haters",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Hater1",
@@ -577,7 +613,9 @@
 						"live-preview": false
 					},
 					"uid": 22,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"pts": 100
+					},
 					"behaviors": {},
 					"world": {
 						"x": 8400,
@@ -597,7 +635,7 @@
 					}
 				},
 				{
-					"type": "people",
+					"type": "haters",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Hater1",
@@ -606,7 +644,9 @@
 						"live-preview": false
 					},
 					"uid": 23,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"pts": 100
+					},
 					"behaviors": {},
 					"world": {
 						"x": 8550,
@@ -626,7 +666,7 @@
 					}
 				},
 				{
-					"type": "people",
+					"type": "haters",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Hater1",
@@ -635,7 +675,9 @@
 						"live-preview": false
 					},
 					"uid": 24,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"pts": 100
+					},
 					"behaviors": {},
 					"world": {
 						"x": 9000,
@@ -655,7 +697,7 @@
 					}
 				},
 				{
-					"type": "people",
+					"type": "haters",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Hater1",
@@ -664,7 +706,9 @@
 						"live-preview": false
 					},
 					"uid": 25,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"pts": 100
+					},
 					"behaviors": {},
 					"world": {
 						"x": 9300,
@@ -776,52 +820,6 @@
 					}
 				},
 				{
-					"type": "score_txt",
-					"properties": {
-						"text": "0000",
-						"enable-bbcode": true,
-						"font": "Arial",
-						"size": 60,
-						"line-height": 0,
-						"bold": true,
-						"italic": false,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"horizontal-alignment": "center",
-						"vertical-alignment": "center",
-						"wrapping": "word",
-						"icon-set": -1,
-						"initially-visible": true,
-						"origin": "top-left",
-						"read-aloud": false
-					},
-					"uid": 27,
-					"instanceVariables": {
-						"score": 0
-					},
-					"behaviors": {},
-					"world": {
-						"x": 1600,
-						"y": 50,
-						"width": 300,
-						"height": 100,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
 					"type": "audience_grid",
 					"properties": {
 						"initially-visible": true,
@@ -877,6 +875,47 @@
 						"y": 750,
 						"width": 315,
 						"height": 302,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "score_txt",
+					"properties": {
+						"text": "pts0000",
+						"enable-bbcode": true,
+						"character-width": 60,
+						"character-height": 79,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
+						"spacing-data": "",
+						"scale": 0.8,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "left",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 30,
+					"instanceVariables": {
+						"score": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 1508,
+						"y": 41,
+						"width": 439,
+						"height": 120,
 						"originX": 0,
 						"originY": 0,
 						"color": [

@@ -31,7 +31,7 @@
 				},
 				{
 					"id": "set-x",
-					"objectClass": "people",
+					"objectClass": "haters",
 					"sid": 705195102046462,
 					"parameters": {
 						"x": "Self.X - belt_speed*dt"
@@ -130,14 +130,14 @@
 							"objectClass": "hit",
 							"sid": 975833253934721,
 							"parameters": {
-								"object": "people"
+								"object": "haters"
 							}
 						}
 					],
 					"actions": [
 						{
 							"id": "set-collisions-enabled",
-							"objectClass": "people",
+							"objectClass": "haters",
 							"sid": 856449701703534,
 							"parameters": {
 								"collisions": "disabled"
@@ -146,18 +146,18 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "score_txt",
-							"sid": 388399003119250,
+							"sid": 469125871809675,
 							"parameters": {
 								"instance-variable": "score",
-								"value": "score_txt.score+1"
+								"value": "score_txt.score+haters.pts"
 							}
 						},
 						{
 							"id": "set-text",
 							"objectClass": "score_txt",
-							"sid": 726310732768147,
+							"sid": 346628958191546,
 							"parameters": {
-								"text": "score_txt.score"
+								"text": "\"pts\"&Functions.ScoreToText(score_txt.score)"
 							}
 						},
 						{
@@ -288,6 +288,156 @@
 						}
 					],
 					"sid": 402423109580071
+				}
+			]
+		},
+		{
+			"functionName": "ScoreToText",
+			"functionDescription": "Trata a numeração para que tenha sempre quatro dígitos",
+			"functionCategory": "",
+			"functionReturnType": "string",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "score",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 218065511139820
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 579521136477969,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 637441311272584,
+							"parameters": {
+								"variable": "score",
+								"comparison": 2,
+								"value": "10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 690907273568863,
+							"parameters": {
+								"value": "\"000\"&score"
+							}
+						}
+					],
+					"sid": 275407788156859
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 707645357943667
+						}
+					],
+					"actions": [],
+					"sid": 942917515014455,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 634636989812421,
+									"parameters": {
+										"variable": "score",
+										"comparison": 2,
+										"value": "100"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 770693484898074,
+									"parameters": {
+										"value": "\"00\"&score"
+									}
+								}
+							],
+							"sid": 985459689828564
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 991705736461649
+								}
+							],
+							"actions": [],
+							"sid": 745318653065021,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 520160734807231,
+											"parameters": {
+												"variable": "score",
+												"comparison": 2,
+												"value": "1000"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-function-return-value",
+											"objectClass": "Functions",
+											"sid": 468558759477601,
+											"parameters": {
+												"value": "\"0\"&score"
+											}
+										}
+									],
+									"sid": 151211724859725
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 419605975757065
+										}
+									],
+									"actions": [
+										{
+											"id": "set-function-return-value",
+											"objectClass": "Functions",
+											"sid": 279206368215929,
+											"parameters": {
+												"value": "\"\"&score"
+											}
+										}
+									],
+									"sid": 928277640867172
+								}
+							]
+						}
+					]
 				}
 			]
 		}

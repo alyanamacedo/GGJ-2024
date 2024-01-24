@@ -1,9 +1,17 @@
 {
-	"name": "people",
+	"name": "haters",
 	"plugin-id": "Sprite",
 	"sid": 450253317354784,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "pts",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 329912897458523
+		}
+	],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {

@@ -15,8 +15,8 @@
 		},
 		{
 			"type": "plugin",
-			"id": "Text",
-			"name": "Texto",
+			"id": "Spritefont2",
+			"name": "Fonte de sprites",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -46,15 +46,15 @@
 	"objectTypes": {
 		"items": [
 			"belt_bg",
-			"people",
+			"haters",
 			"btn",
 			"hit",
 			"Tilemap",
-			"score_txt",
 			"Touch",
 			"audience_grid",
 			"Sprite",
-			"audience_color"
+			"audience_color",
+			"score_txt"
 		],
 		"subfolders": []
 	},
