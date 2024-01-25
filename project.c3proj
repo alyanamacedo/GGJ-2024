@@ -52,7 +52,9 @@
 			"background",
 			"speaker",
 			"audience_pointer",
-			"GAMEPLAYLaughTrack"
+			"GAMEPLAYLaughTrack",
+			"background_mask",
+			"belt2"
 		],
 		"subfolders": []
 	},

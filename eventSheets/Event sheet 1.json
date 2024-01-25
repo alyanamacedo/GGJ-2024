@@ -41,15 +41,19 @@
 			"sid": 979594147507471,
 			"children": [
 				{
+					"eventType": "comment",
+					"text": "Haverá uma pequena distorção visual na esteira nas emendas, pois quando a esteira reseta a posição, não considera que a posição atual está em movimento"
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
 							"id": "compare-x",
 							"objectClass": "belt",
-							"sid": 709359466851384,
+							"sid": 726896097831000,
 							"parameters": {
 								"comparison": 3,
-								"x-co-ordinate": "-1950"
+								"x-co-ordinate": "-2774"
 							}
 						}
 					],
@@ -57,9 +61,9 @@
 						{
 							"id": "set-x",
 							"objectClass": "belt",
-							"sid": 608045688280595,
+							"sid": 355146069250803,
 							"parameters": {
-								"x": "-2"
+								"x": "0"
 							}
 						}
 					],
