@@ -33,6 +33,13 @@
 			"name": "Toque",
 			"author": "Scirra",
 			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Sin",
+			"name": "Senóide",
+			"author": "Scirra",
+			"bundled": false
 		}
 	],
 	"uniqueId": "l1hc2xznznw",
@@ -45,7 +52,6 @@
 			"Touch",
 			"audience_bg",
 			"btn_bg",
-			"audience_color",
 			"score_txt",
 			"player",
 			"hitArea2",

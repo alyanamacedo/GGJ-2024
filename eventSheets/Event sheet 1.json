@@ -98,37 +98,11 @@
 								"comparison": 0,
 								"value": "\"joke\""
 							}
-						}
-					],
-					"actions": [
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 790357106964651,
-							"parameters": {
-								"seconds": "1150/belt_speed-0.1"
-							}
 						},
-						{
-							"id": "set-animation",
-							"objectClass": "player",
-							"sid": 816548542125555,
-							"parameters": {
-								"animation": "\"Microphone\"",
-								"from": "beginning"
-							}
-						}
-					],
-					"sid": 847864997615206,
-					"isOrBlock": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "hittable",
-							"sid": 852828540231248,
+							"sid": 147132876573143,
 							"parameters": {
 								"instance-variable": "type",
 								"comparison": 0,
@@ -140,68 +114,22 @@
 						{
 							"id": "wait",
 							"objectClass": "System",
-							"sid": 261607156336063,
+							"sid": 254370331801922,
 							"parameters": {
-								"seconds": "1150/belt_speed-0.1"
+								"seconds": "1150/belt_speed-1"
 							}
 						},
 						{
 							"id": "set-animation",
 							"objectClass": "player",
-							"sid": 754109820560408,
+							"sid": 778685880611844,
 							"parameters": {
-								"animation": "\"Punch\"",
+								"animation": "\"Speaker\"",
 								"from": "beginning"
 							}
 						}
 					],
-					"sid": 931829666363824,
-					"isOrBlock": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "hittable",
-							"sid": 154601766677364,
-							"parameters": {
-								"instance-variable": "type",
-								"comparison": 0,
-								"value": "\"liker\""
-							}
-						},
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "hittable",
-							"sid": 601439933396676,
-							"parameters": {
-								"instance-variable": "type",
-								"comparison": 0,
-								"value": "\"hater\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 606520330430408,
-							"parameters": {
-								"seconds": "1150/belt_speed-0.1"
-							}
-						},
-						{
-							"id": "set-animation",
-							"objectClass": "player",
-							"sid": 302191035064817,
-							"parameters": {
-								"animation": "\"Hammer\"",
-								"from": "beginning"
-							}
-						}
-					],
-					"sid": 894087580952664,
+					"sid": 847864997615206,
 					"isOrBlock": true
 				}
 			]
@@ -325,6 +253,52 @@
 								}
 							],
 							"sid": 530251147316566,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "hittable",
+											"sid": 734967899552182,
+											"parameters": {
+												"instance-variable": "type",
+												"comparison": 0,
+												"value": "\"finaljoke\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "player",
+											"sid": 209593474786507,
+											"parameters": {
+												"animation": "\"Punch\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 998609926814336,
+											"parameters": {
+												"seconds": "0.2"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "player",
+											"sid": 585935130316375,
+											"parameters": {
+												"animation": "\"Idle\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 521559500552898
+								}
+							],
 							"isOrBlock": true
 						},
 						{
@@ -344,11 +318,37 @@
 							"actions": [
 								{
 									"callFunction": "AudienceMeter",
-									"sid": 614197360050280,
+									"sid": 738619025823967,
 									"parameters": [
 										false,
 										"hittable.pts_audicence"
 									]
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "player",
+									"sid": 572946185082766,
+									"parameters": {
+										"animation": "\"Hammer\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 310078498971183,
+									"parameters": {
+										"seconds": "0.2"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "player",
+									"sid": 556874406490837,
+									"parameters": {
+										"animation": "\"Idle\"",
+										"from": "beginning"
+									}
 								}
 							],
 							"sid": 797364665296656
@@ -369,9 +369,17 @@
 							],
 							"actions": [
 								{
+									"callFunction": "AudienceMeter",
+									"sid": 545433821288267,
+									"parameters": [
+										true,
+										"hittable.pts_audicence"
+									]
+								},
+								{
 									"id": "set-instvar-value",
 									"objectClass": "score_txt",
-									"sid": 804803782579496,
+									"sid": 554664451953725,
 									"parameters": {
 										"instance-variable": "score",
 										"value": "score_txt.score+hittable.pts_score"
@@ -380,18 +388,36 @@
 								{
 									"id": "set-text",
 									"objectClass": "score_txt",
-									"sid": 640571371602575,
+									"sid": 835880192127796,
 									"parameters": {
 										"text": "Functions.ScoreToText(score_txt.score)"
 									}
 								},
 								{
-									"callFunction": "AudienceMeter",
-									"sid": 235483345604907,
-									"parameters": [
-										true,
-										"hittable.pts_audicence"
-									]
+									"id": "set-animation",
+									"objectClass": "player",
+									"sid": 278237762482855,
+									"parameters": {
+										"animation": "\"Hammer\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 312198779868862,
+									"parameters": {
+										"seconds": "0.2"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "player",
+									"sid": 322961680972320,
+									"parameters": {
+										"animation": "\"Idle\"",
+										"from": "beginning"
+									}
 								}
 							],
 							"sid": 641998157229903
@@ -461,22 +487,48 @@
 							}
 						},
 						{
-							"id": "compare-width",
-							"objectClass": "audience_color",
-							"sid": 942328866871418,
+							"id": "compare-x",
+							"objectClass": "audience_pointer",
+							"sid": 418677200976437,
 							"parameters": {
 								"comparison": 3,
-								"width": "560-value"
+								"x-co-ordinate": "962-value"
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "set-width",
-							"objectClass": "audience_color",
-							"sid": 469901928870748,
+							"id": "set-x",
+							"objectClass": "audience_pointer",
+							"sid": 227089365888498,
 							"parameters": {
-								"width": "Self.Width+value"
+								"x": "audience_pointer.X+value"
+							}
+						},
+						{
+							"id": "set-active",
+							"objectClass": "audience_pointer",
+							"sid": 293067081224265,
+							"behaviorType": "Senóide",
+							"parameters": {
+								"state": "active"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 510951941151672,
+							"parameters": {
+								"seconds": "1"
+							}
+						},
+						{
+							"id": "set-active",
+							"objectClass": "audience_pointer",
+							"sid": 467012316555883,
+							"behaviorType": "Senóide",
+							"parameters": {
+								"state": "inactive"
 							}
 						}
 					],
@@ -495,22 +547,48 @@
 							"isInverted": true
 						},
 						{
-							"id": "compare-width",
-							"objectClass": "audience_color",
-							"sid": 517106413266706,
+							"id": "compare-x",
+							"objectClass": "audience_pointer",
+							"sid": 927454495939290,
 							"parameters": {
 								"comparison": 5,
-								"width": "33+value"
+								"x-co-ordinate": "230+value"
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "set-width",
-							"objectClass": "audience_color",
-							"sid": 228645664924382,
+							"id": "set-x",
+							"objectClass": "audience_pointer",
+							"sid": 779903224315505,
 							"parameters": {
-								"width": "Self.Width-value"
+								"x": "audience_pointer.X-value"
+							}
+						},
+						{
+							"id": "set-active",
+							"objectClass": "audience_pointer",
+							"sid": 365457321106848,
+							"behaviorType": "Senóide",
+							"parameters": {
+								"state": "active"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 825492122501594,
+							"parameters": {
+								"seconds": "1"
+							}
+						},
+						{
+							"id": "set-active",
+							"objectClass": "audience_pointer",
+							"sid": 352865106076159,
+							"behaviorType": "Senóide",
+							"parameters": {
+								"state": "inactive"
 							}
 						}
 					],
