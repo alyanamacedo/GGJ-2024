@@ -1,7 +1,7 @@
 {
-	"name": "Sprite",
+	"name": "GAMEPLAYLaughTrack",
 	"plugin-id": "Sprite",
-	"sid": 359479405320819,
+	"sid": 954643487863990,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -11,21 +11,21 @@
 			{
 				"frames": [
 					{
-						"width": 250,
-						"height": 250,
-						"originX": 0.5,
-						"originY": 0.5,
+						"width": 1921,
+						"height": 1079,
+						"originX": 0,
+						"originY": 0,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 5530556,
+						"imageSpriteId": 3020443,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					}
 				],
-				"sid": 486101433056372,
-				"name": "Animation 1",
+				"sid": 894969034778817,
+				"name": "Default",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

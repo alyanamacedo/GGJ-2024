@@ -23,7 +23,7 @@
 			"actions": [
 				{
 					"id": "set-x",
-					"objectClass": "belt_bg",
+					"objectClass": "belt",
 					"sid": 838374614300145,
 					"parameters": {
 						"x": "Self.X - belt_speed*dt"
@@ -45,7 +45,7 @@
 					"conditions": [
 						{
 							"id": "compare-x",
-							"objectClass": "belt_bg",
+							"objectClass": "belt",
 							"sid": 709359466851384,
 							"parameters": {
 								"comparison": 3,
@@ -56,7 +56,7 @@
 					"actions": [
 						{
 							"id": "set-x",
-							"objectClass": "belt_bg",
+							"objectClass": "belt",
 							"sid": 608045688280595,
 							"parameters": {
 								"x": "-2"
@@ -262,7 +262,7 @@
 					"conditions": [
 						{
 							"id": "is-overlapping-another-object",
-							"objectClass": "hitArea",
+							"objectClass": "target",
 							"sid": 975833253934721,
 							"parameters": {
 								"object": "hittable"
@@ -376,9 +376,9 @@
 								{
 									"id": "set-text",
 									"objectClass": "score_txt",
-									"sid": 488608628667938,
+									"sid": 640571371602575,
 									"parameters": {
-										"text": "\"pts\"&Functions.ScoreToText(score_txt.score)"
+										"text": "Functions.ScoreToText(score_txt.score)"
 									}
 								},
 								{

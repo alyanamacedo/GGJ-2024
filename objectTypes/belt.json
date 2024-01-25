@@ -1,5 +1,5 @@
 {
-	"name": "belt_bg",
+	"name": "belt",
 	"plugin-id": "TiledBg",
 	"sid": 789693890691539,
 	"isGlobal": false,
@@ -7,14 +7,14 @@
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"image": {
-		"width": 150,
-		"height": 150,
+		"width": 1921,
+		"height": 400,
 		"originX": 0.5,
 		"originY": 0.5,
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
-		"imageSpriteId": 9318461,
+		"imageSpriteId": 5569271,
 		"useCollisionPoly": true,
 		"tag": ""
 	}
