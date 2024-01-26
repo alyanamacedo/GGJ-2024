@@ -8,6 +8,20 @@
 	"usedAddons": [
 		{
 			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Keyboard",
+			"name": "Keyboard",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
@@ -60,7 +74,9 @@
 			"audience_pointer",
 			"GAMEPLAYLaughTrack",
 			"background_mask",
-			"belt2"
+			"belt2",
+			"Keyboard",
+			"Audio"
 		],
 		"subfolders": []
 	},
@@ -72,13 +88,15 @@
 	},
 	"layouts": {
 		"items": [
-			"Level01"
+			"Level01",
+			"Audio Test"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"Event sheet 1"
+			"Event sheet 1",
+			"AudioFunctions"
 		],
 		"subfolders": []
 	},
@@ -88,11 +106,53 @@
 			"subfolders": []
 		},
 		"sound": {
-			"items": [],
+			"items": [
+				{
+					"name": "SFX_FallGras.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 195814246975043,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "SFX_Laugh.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 348692200124763,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "SFX.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 124707646730915,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"music": {
-			"items": [],
+			"items": [
+				{
+					"name": "MUS_Menu.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 680016510323426,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "MUS_Title.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 649366255926395,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"video": {

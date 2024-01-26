@@ -1,0 +1,1138 @@
+{
+	"name": "AudioFunctions",
+	"events": [
+		{
+			"eventType": "comment",
+			"text": "Made by Marcel Carvalho (@Mareoceu)\n\n# SOCIAL\nTwitter: @mareoceu\nDiscord: mareoceu\nSoundcloud: https://soundcloud.com/mareoceu\n\n# TAGS\nTAG\t\t\t|  DESCRIÇÃO\nMUS\t\t\t|  Tudo que for música. Só pode tocar uma por vez.\nSFX\t\t\t|  Tudo que for SFX. Os áudios podem se soprepor.\nENV\t\t\t|  Tudo que for environment (som do mapa)\nUI                     |  Tudo que pertencer à interface. \n\n# NOMENCLATURA\nPRÉFIXO\t\t|  DESCRIÇÃO\nMUS_\t\t|  Usado antes da música\nSFX_\t\t\t|  Usado antes do nome do efeito sonoro\nENV_\t\t|  Usado antes do som ambiente\nUI_                   |  Usado em sons da interface."
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Audio Setup",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "PARÂMETRO\t|  DESCRIÇÃO\nisStopping\t|  Verifica se o áudio está efetuando fade (esmaecimento)"
+				},
+				{
+					"eventType": "variable",
+					"name": "isStopping",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 504494954137271
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Buses",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "🧪 A FAZER\n1. Criar 3 controles de volume dos arquivos de áudio vinculados as tags:\n\n- MUS\n- SFX\n- ENV\n\n2. Criar um controle de estado para pause que aplica filtro de áudio low pass na tag MUS. ",
+							"text-color": [
+								1,
+								1,
+								1,
+								1
+							],
+							"background-color": [
+								0.18823529411764706,
+								0.5411764705882353,
+								0,
+								1
+							]
+						}
+					],
+					"sid": 557571776916874,
+					"background-color": [
+						0.4823529411764706,
+						0.3176470588235294,
+						0.4470588235294118,
+						1
+					]
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Music & Environment",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "INSTRUÇÕES\n\nChamar a função PlayMusic para música toda vez que mudar o layout."
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-start-of-layout",
+									"objectClass": "System",
+									"sid": 857785732133923
+								}
+							],
+							"actions": [],
+							"sid": 452224939605525,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 245920804386266,
+											"parameters": {
+												"first-value": "LayoutName",
+												"comparison": 0,
+												"second-value": "\"Title\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "PlayMusic",
+											"sid": 662229236676883,
+											"parameters": [
+												"\"MUS_Title\"",
+												"-100",
+												"\"MUS\"",
+												"0"
+											]
+										}
+									],
+									"sid": 429609171468667
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 142153650894358,
+											"parameters": {
+												"first-value": "LayoutName",
+												"comparison": 0,
+												"second-value": "\"Credits\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 653801451351855
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "🧪 A FAZER\n1. Transição da parte inicial de uma música para o loop. Exemplo: bateria não toca duas vezes.",
+							"text-color": [
+								1,
+								1,
+								1,
+								1
+							],
+							"background-color": [
+								0.18823529411764706,
+								0.5411764705882353,
+								0,
+								1
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "FUNÇÕES"
+						},
+						{
+							"functionName": "PlayMusic",
+							"functionDescription": "Tocar áudio com parâmetros.",
+							"functionCategory": "Audio",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "fileName",
+									"type": "string",
+									"initialValue": "",
+									"comment": "Nome do arquivo de áudio.",
+									"sid": 568263297134602
+								},
+								{
+									"name": "volume",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "Volume em décibeis para tocar o áudio.",
+									"sid": 351391448783315
+								},
+								{
+									"name": "tag",
+									"type": "string",
+									"initialValue": "MUS",
+									"comment": "Identificador do áudio.",
+									"sid": 206534662659457
+								},
+								{
+									"name": "fade",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "Define se haverá (1) ou não (0) fade ou trocar de uma música para outra. Usar 0 para a primeira música.",
+									"sid": 888484587263264
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 900364203208946,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "PARÂMETRO\t|  DESCRIÇÃO\nfileName\t\t|  Nome do arquivo de áudio\nvolume\t\t|  Volume. 0 para níveis padrões\ntag\t\t\t|  Etiqueta do arquivo de áudio\nfade\t\t\t|  0 para executar fade out, 1 para não executar\noffset               |   Se ativo, o audio irá começar com atraso. "
+								},
+								{
+									"eventType": "comment",
+									"text": "Verifica se há alguma música tocando"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-tag-playing",
+											"objectClass": "Audio",
+											"sid": 305162306273651,
+											"parameters": {
+												"tag": "tag"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "play-by-name",
+											"objectClass": "Audio",
+											"sid": 459408010678961,
+											"parameters": {
+												"folder": "sounds",
+												"audio-file-name": "fileName",
+												"loop": "looping",
+												"volume": "volume",
+												"stereo-pan": "0",
+												"tag-optional": "tag"
+											}
+										}
+									],
+									"sid": 112014719581258
+								},
+								{
+									"eventType": "comment",
+									"text": "Música está executando e fade = 0"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-tag-playing",
+											"objectClass": "Audio",
+											"sid": 457163145136469,
+											"parameters": {
+												"tag": "tag"
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 619360694656537,
+											"parameters": {
+												"variable": "tag",
+												"comparison": 1,
+												"value": "\"\""
+											}
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 948004546695792,
+											"parameters": {
+												"first-value": "fade",
+												"comparison": 0,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "fade-volume",
+											"objectClass": "Audio",
+											"sid": 779180452564325,
+											"parameters": {
+												"tag": "tag",
+												"db": "-100",
+												"duration": "2",
+												"ending": "stop"
+											}
+										},
+										{
+											"id": "play-by-name",
+											"objectClass": "Audio",
+											"sid": 441900292325202,
+											"parameters": {
+												"folder": "sounds",
+												"audio-file-name": "fileName",
+												"loop": "looping",
+												"volume": "volume",
+												"stereo-pan": "0",
+												"tag-optional": "tag"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 902231532145451,
+											"parameters": {
+												"seconds": "3"
+											}
+										},
+										{
+											"id": "fade-volume",
+											"objectClass": "Audio",
+											"sid": 160884216900125,
+											"parameters": {
+												"tag": "tag",
+												"db": "0",
+												"duration": "1",
+												"ending": "keep-playing"
+											}
+										}
+									],
+									"sid": 689696207308292
+								},
+								{
+									"eventType": "comment",
+									"text": "Neste último exemplo, estou tentando fazer com que o jogo detecte que uma música está pausando. Ainda não entendi como fazer o bug desaparecer."
+								},
+								{
+									"eventType": "comment",
+									"text": "🐞 BUG\n1. Uma música pode ser executada duas vezes e, por um breve momento, conseguimos escutar duas instâncias. Levar em consideração se o jogador irá conseguir sobrepor uma música com outra.",
+									"text-color": [
+										1,
+										1,
+										1,
+										1
+									],
+									"background-color": [
+										1,
+										0,
+										0,
+										1
+									]
+								}
+							]
+						}
+					],
+					"sid": 879355309542806,
+					"background-color": [
+						0.4823529411764706,
+						0.3176470588235294,
+						0.4470588235294118,
+						1
+					]
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "SFX",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "FUNÇÕES"
+						},
+						{
+							"functionName": "PlayAudio",
+							"functionDescription": "Tocar áudio com parâmetros.",
+							"functionCategory": "Audio",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "fileName",
+									"type": "string",
+									"initialValue": "",
+									"comment": "Nome do arquivo de áudio.",
+									"sid": 580621767978575
+								},
+								{
+									"name": "volume",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "Volume em décibeis para tocar o áudio.",
+									"sid": 459240860932394
+								},
+								{
+									"name": "tag",
+									"type": "string",
+									"initialValue": "",
+									"comment": "Identificador do áudio.",
+									"sid": 658175414734362
+								},
+								{
+									"name": "fade",
+									"type": "number",
+									"initialValue": "1",
+									"comment": "Define se haverá (0) ou não (1) fade ou trocar de uma música para outra. Usar 0 para a primeira música.",
+									"sid": 888871655585770
+								},
+								{
+									"name": "offset",
+									"type": "boolean",
+									"initialValue": "false",
+									"comment": "",
+									"sid": 672324350687911
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 949486293117613,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "PARÂMETRO\t|  DESCRIÇÃO\nfileName\t\t|  Nome do arquivo de áudio\nvolume\t\t|  Volume. 0 para níveis padrões\ntag\t\t\t|  Etiqueta do arquivo de áudio"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-tag-playing",
+											"objectClass": "Audio",
+											"sid": 681381580337937,
+											"parameters": {
+												"tag": "tag"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "play-by-name",
+											"objectClass": "Audio",
+											"sid": 662233267064405,
+											"parameters": {
+												"folder": "sounds",
+												"audio-file-name": "fileName",
+												"loop": "not-looping",
+												"volume": "volume",
+												"stereo-pan": "0",
+												"tag-optional": "tag"
+											}
+										}
+									],
+									"sid": 751643332651294
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-tag-playing",
+											"objectClass": "Audio",
+											"sid": 517704554082577,
+											"parameters": {
+												"tag": "tag"
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 536558275647964,
+											"parameters": {
+												"variable": "tag",
+												"comparison": 1,
+												"value": "\"\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "stop",
+											"objectClass": "Audio",
+											"sid": 916400737284315,
+											"parameters": {
+												"tag": "tag"
+											}
+										},
+										{
+											"id": "play-by-name",
+											"objectClass": "Audio",
+											"sid": 460600043442191,
+											"parameters": {
+												"folder": "sounds",
+												"audio-file-name": "fileName",
+												"loop": "not-looping",
+												"volume": "volume",
+												"stereo-pan": "0",
+												"tag-optional": "tag"
+											}
+										}
+									],
+									"sid": 588642091819198
+								},
+								{
+									"eventType": "comment",
+									"text": "Randomiza o pitch de efeitos sonoros específicos utilizando a função random(). Utilizar nome da etiqueta igual ao nome do arquivo neste caso."
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 638541384690043,
+											"parameters": {
+												"variable": "fileName",
+												"comparison": 0,
+												"value": "\"SFX_Dialog\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-playback-rate",
+											"objectClass": "Audio",
+											"sid": 852539104800737,
+											"parameters": {
+												"tag": "\"SFX_Dialog\"",
+												"playback-rate": "random(1,1.25)"
+											}
+										}
+									],
+									"sid": 738887641553921
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 209061120538742,
+											"parameters": {
+												"variable": "fileName",
+												"comparison": 0,
+												"value": "\"SFX_HammerHit\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-playback-rate",
+											"objectClass": "Audio",
+											"sid": 332997637103493,
+											"parameters": {
+												"tag": "\"SFX_HammerHit\"",
+												"playback-rate": "random(1,1.25)"
+											}
+										}
+									],
+									"sid": 127605130893644
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 914513216919785,
+											"parameters": {
+												"variable": "fileName",
+												"comparison": 0,
+												"value": "\"SFX_HammerMiss\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-playback-rate",
+											"objectClass": "Audio",
+											"sid": 572139458912167,
+											"parameters": {
+												"tag": "\"SFX_HammerMiss\"",
+												"playback-rate": "random(1,1.25)"
+											}
+										}
+									],
+									"sid": 924889918227587
+								},
+								{
+									"eventType": "comment",
+									"text": "Caso tenha fade e offset, o efeito sonoro irá executar dentro da sua duração"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-tag-playing",
+											"objectClass": "Audio",
+											"sid": 641779890720672,
+											"parameters": {
+												"tag": "tag"
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 934695983136293,
+											"parameters": {
+												"variable": "tag",
+												"comparison": 1,
+												"value": "\"\""
+											}
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 113670098037106,
+											"parameters": {
+												"first-value": "fade",
+												"comparison": 0,
+												"second-value": "0"
+											}
+										},
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 624366957722840,
+											"parameters": {
+												"variable": "offset"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "fade-volume",
+											"objectClass": "Audio",
+											"sid": 575122414207727,
+											"parameters": {
+												"tag": "tag",
+												"db": "-100",
+												"duration": "0.5",
+												"ending": "stop"
+											}
+										},
+										{
+											"id": "play-by-name",
+											"objectClass": "Audio",
+											"sid": 281171686538522,
+											"parameters": {
+												"folder": "sounds",
+												"audio-file-name": "fileName",
+												"loop": "looping",
+												"volume": "volume",
+												"stereo-pan": "0",
+												"tag-optional": "tag"
+											}
+										},
+										{
+											"id": "fade-volume",
+											"objectClass": "Audio",
+											"sid": 366921258427118,
+											"parameters": {
+												"tag": "tag",
+												"db": "-8",
+												"duration": "2",
+												"ending": "keep-playing"
+											}
+										},
+										{
+											"id": "seek-to",
+											"objectClass": "Audio",
+											"sid": 209851700536539,
+											"parameters": {
+												"tag": "tag",
+												"position": "random(Audio.Duration(tag)/2)"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 928923125103188,
+											"parameters": {
+												"seconds": "3"
+											}
+										},
+										{
+											"id": "fade-volume",
+											"objectClass": "Audio",
+											"sid": 469676289976309,
+											"parameters": {
+												"tag": "tag",
+												"db": "-8",
+												"duration": "2",
+												"ending": "keep-playing"
+											}
+										},
+										{
+											"id": "fade-volume",
+											"objectClass": "Audio",
+											"sid": 871092581163939,
+											"parameters": {
+												"tag": "tag",
+												"db": "-100",
+												"duration": "2",
+												"ending": "stop"
+											}
+										}
+									],
+									"sid": 168728254323047
+								}
+							]
+						}
+					],
+					"sid": 567392579506313,
+					"background-color": [
+						0.4823529411764706,
+						0.3176470588235294,
+						0.4470588235294118,
+						1
+					]
+				},
+				{
+					"functionName": "PlayEnv",
+					"functionDescription": "Tocar áudio com parâmetros.",
+					"functionCategory": "Audio",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "fileName",
+							"type": "string",
+							"initialValue": "",
+							"comment": "Nome do arquivo de áudio.",
+							"sid": 726459061698446
+						},
+						{
+							"name": "volume",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "Volume em décibeis para tocar o áudio.",
+							"sid": 769170580887844
+						},
+						{
+							"name": "tag",
+							"type": "string",
+							"initialValue": "MUS",
+							"comment": "Identificador do áudio.",
+							"sid": 660247944623936
+						},
+						{
+							"name": "fade",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "Define se haverá (1) ou não (0) fade ou trocar de uma música para outra. Usar 0 para a primeira música.",
+							"sid": 773124439824344
+						},
+						{
+							"name": "offset",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "Faz com que o áudio comece com atraso. Deve ser usado para loops de environment.",
+							"sid": 932434476638291
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 556282845018765,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "PARÂMETRO\t|  DESCRIÇÃO\nfileName\t\t|  Nome do arquivo de áudio\nvolume\t\t|  Volume. 0 para níveis padrões\ntag\t\t\t|  Etiqueta do arquivo de áudio\nfade\t\t\t|  0 para executar fade out, 1 para não executar\noffset               |   Se ativo, o audio irá começar com atraso. "
+						},
+						{
+							"eventType": "comment",
+							"text": "Verifica se há alguma música tocando"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-tag-playing",
+									"objectClass": "Audio",
+									"sid": 622193742678336,
+									"parameters": {
+										"tag": "tag"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "play-by-name",
+									"objectClass": "Audio",
+									"sid": 347785754131366,
+									"parameters": {
+										"folder": "sounds",
+										"audio-file-name": "fileName",
+										"loop": "looping",
+										"volume": "volume",
+										"stereo-pan": "0",
+										"tag-optional": "tag"
+									}
+								}
+							],
+							"sid": 967683830157567
+						},
+						{
+							"eventType": "comment",
+							"text": "Música está executando e fade = 0"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-tag-playing",
+									"objectClass": "Audio",
+									"sid": 886426569605442,
+									"parameters": {
+										"tag": "tag"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 631309453002177,
+									"parameters": {
+										"variable": "tag",
+										"comparison": 1,
+										"value": "\"\""
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 743682015383592,
+									"parameters": {
+										"first-value": "fade",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 451600125965849,
+									"parameters": {
+										"variable": "offset"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "fade-volume",
+									"objectClass": "Audio",
+									"sid": 341014027379250,
+									"parameters": {
+										"tag": "tag",
+										"db": "-100",
+										"duration": "2",
+										"ending": "stop"
+									}
+								},
+								{
+									"id": "play-by-name",
+									"objectClass": "Audio",
+									"sid": 339714439461094,
+									"parameters": {
+										"folder": "sounds",
+										"audio-file-name": "fileName",
+										"loop": "looping",
+										"volume": "volume",
+										"stereo-pan": "0",
+										"tag-optional": "tag"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 162064702161509,
+									"parameters": {
+										"seconds": "3"
+									}
+								},
+								{
+									"id": "fade-volume",
+									"objectClass": "Audio",
+									"sid": 897524743942464,
+									"parameters": {
+										"tag": "tag",
+										"db": "0",
+										"duration": "1",
+										"ending": "keep-playing"
+									}
+								}
+							],
+							"sid": 960284663919481
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-tag-playing",
+									"objectClass": "Audio",
+									"sid": 717457783248426,
+									"parameters": {
+										"tag": "tag"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 121931898640303,
+									"parameters": {
+										"variable": "tag",
+										"comparison": 1,
+										"value": "\"\""
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 891673569351367,
+									"parameters": {
+										"first-value": "fade",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 375101810477741,
+									"parameters": {
+										"variable": "offset"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "fade-volume",
+									"objectClass": "Audio",
+									"sid": 410789237936680,
+									"parameters": {
+										"tag": "tag",
+										"db": "-100",
+										"duration": "0.5",
+										"ending": "stop"
+									}
+								},
+								{
+									"id": "play-by-name",
+									"objectClass": "Audio",
+									"sid": 759095511572885,
+									"parameters": {
+										"folder": "sounds",
+										"audio-file-name": "fileName",
+										"loop": "looping",
+										"volume": "volume",
+										"stereo-pan": "0",
+										"tag-optional": "tag"
+									}
+								},
+								{
+									"id": "fade-volume",
+									"objectClass": "Audio",
+									"sid": 122435893639615,
+									"parameters": {
+										"tag": "tag",
+										"db": "-8",
+										"duration": "2",
+										"ending": "keep-playing"
+									}
+								},
+								{
+									"id": "seek-to",
+									"objectClass": "Audio",
+									"sid": 904862289718405,
+									"parameters": {
+										"tag": "tag",
+										"position": "random(Audio.Duration(tag)) - 5"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 677428570954209,
+									"parameters": {
+										"seconds": "3"
+									}
+								},
+								{
+									"id": "fade-volume",
+									"objectClass": "Audio",
+									"sid": 408776422062202,
+									"parameters": {
+										"tag": "tag",
+										"db": "-8",
+										"duration": "2",
+										"ending": "keep-playing"
+									}
+								},
+								{
+									"id": "fade-volume",
+									"objectClass": "Audio",
+									"sid": 226171180276195,
+									"parameters": {
+										"tag": "tag",
+										"db": "-100",
+										"duration": "2",
+										"ending": "stop"
+									}
+								}
+							],
+							"sid": 398751600191967
+						},
+						{
+							"eventType": "comment",
+							"text": "Neste último exemplo, estou tentando fazer com que o jogo detecte que uma música está pausando. Ainda não entendi como fazer o bug desaparecer."
+						}
+					]
+				}
+			],
+			"sid": 440891143866226
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Debug",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Para efeitos MUSICA e ENVIRONMENT deve-se começar com volume -100 para que o fade in funcione."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 713714709685500,
+							"parameters": {
+								"key": 49
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "PlayMusic",
+							"sid": 854470147478834,
+							"parameters": [
+								"\"MUS_Title\"",
+								"-100",
+								"\"MUS\"",
+								"0"
+							]
+						}
+					],
+					"sid": 119635253504616
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 599400018538245,
+							"parameters": {
+								"key": 50
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "PlayMusic",
+							"sid": 792095000339218,
+							"parameters": [
+								"\"MUS_Menu\"",
+								"-100",
+								"\"MUS\"",
+								"0"
+							]
+						}
+					],
+					"sid": 617246449354568
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 340273776087959,
+							"parameters": {
+								"key": 51
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "PlayAudio",
+							"sid": 159834542437181,
+							"parameters": [
+								"\"SFX\"",
+								"0",
+								"\"SFX_Dialog\"",
+								"0",
+								false
+							]
+						}
+					],
+					"sid": 760528737438671
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 573495673553607,
+							"parameters": {
+								"key": 52
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "PlayEnv",
+							"sid": 150847990418902,
+							"parameters": [
+								"\"SFX_Laugh\"",
+								"-100",
+								"\"SFX\"",
+								"0",
+								true
+							]
+						}
+					],
+					"sid": 994311755910024
+				}
+			],
+			"sid": 211207033586543,
+			"background-color": [
+				0.5333333333333333,
+				0.34901960784313724,
+				0.49411764705882355,
+				1
+			]
+		}
+	],
+	"sid": 738873851744681
+}
