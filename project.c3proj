@@ -16,28 +16,28 @@
 		{
 			"type": "plugin",
 			"id": "Spritefont2",
-			"name": "Fonte de sprites",
+			"name": "Sprite font",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "TiledBg",
-			"name": "Plano de Fundo em Blocos",
+			"name": "Tiled Background",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "Touch",
-			"name": "Toque",
+			"name": "Touch",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Sin",
-			"name": "Senóide",
+			"name": "Sine",
 			"author": "Scirra",
 			"bundled": false
 		}
@@ -232,7 +232,7 @@
 		"cordovaAndroidScheme": "https",
 		"autoReloadScriptsOnPreview": false,
 		"exportFileStructure": "folders",
-		"uidAllocationMode": "increment"
+		"uidAllocationMode": "random"
 	},
 	"viewportWidth": 1920,
 	"viewportHeight": 1080,
