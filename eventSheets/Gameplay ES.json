@@ -12,6 +12,16 @@
 			"sid": 818876564600325
 		},
 		{
+			"eventType": "variable",
+			"name": "next_target",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 618185881594989
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -185,9 +195,74 @@
 								"animation": "\"Speaker\"",
 								"from": "beginning"
 							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 753192853192719,
+							"parameters": {
+								"variable": "next_target",
+								"value": "\"joke\""
+							}
 						}
 					],
 					"sid": 847864997615206,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "hittable",
+							"sid": 101771660849524,
+							"parameters": {
+								"instance-variable": "type",
+								"comparison": 0,
+								"value": "\"hater\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 331040561544479,
+							"parameters": {
+								"variable": "next_target",
+								"value": "\"hater\""
+							}
+						}
+					],
+					"sid": 105229288216111,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "hittable",
+							"sid": 864633045142743,
+							"parameters": {
+								"instance-variable": "type",
+								"comparison": 0,
+								"value": "\"liker\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 283353634079669,
+							"parameters": {
+								"variable": "next_target",
+								"value": "\"liker\""
+							}
+						}
+					],
+					"sid": 905921049945360,
 					"isOrBlock": true
 				}
 			]
@@ -302,6 +377,10 @@
 							],
 							"actions": [
 								{
+									"type": "comment",
+									"text": "Tocar SFX_Dialog"
+								},
+								{
 									"callFunction": "AudienceMeter",
 									"sid": 653468592539060,
 									"parameters": [
@@ -327,6 +406,10 @@
 										}
 									],
 									"actions": [
+										{
+											"type": "comment",
+											"text": "Tocar SFX_Punch"
+										},
 										{
 											"id": "set-animation",
 											"objectClass": "player",
@@ -428,23 +511,11 @@
 							"actions": [
 								{
 									"callFunction": "PlayAudio",
-									"sid": 395745044953538,
-									"disabled": true,
+									"sid": 750595375127684,
 									"parameters": [
 										"\"SFX_HammerHit\"",
 										"0",
 										"\"SFX_HammerHit\"",
-										"1",
-										false
-									]
-								},
-								{
-									"callFunction": "PlayAudio",
-									"sid": 372487726019241,
-									"parameters": [
-										"\"UI_Swosh\"",
-										"0",
-										"\"UI_Swosh\"",
 										"1",
 										false
 									]
@@ -533,17 +604,6 @@
 					],
 					"actions": [
 						{
-							"callFunction": "PlayAudio",
-							"sid": 404670660846413,
-							"parameters": [
-								"\"SFX_HammerMiss\"",
-								"0",
-								"\"SFX_HammerMiss\"",
-								"1",
-								false
-							]
-						},
-						{
 							"type": "comment",
 							"text": "repetir parâmetros no aplauso e na risada:"
 						},
@@ -567,7 +627,38 @@
 							]
 						}
 					],
-					"sid": 708791972956088
+					"sid": 708791972956088,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 117406152397102,
+									"parameters": {
+										"variable": "next_target",
+										"comparison": 0,
+										"value": "\"hater\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "PlayAudio",
+									"sid": 773290304409276,
+									"parameters": [
+										"\"SFX_HammerMiss\"",
+										"0",
+										"\"SFX_HammerMiss\"",
+										"1",
+										false
+									]
+								}
+							],
+							"sid": 175171111849262
+						}
+					]
 				}
 			]
 		},
@@ -869,6 +960,27 @@
 					]
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-animation-finished",
+					"objectClass": "VFX_HammerHit",
+					"sid": 740063248465560
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "VFX_HammerHit",
+					"sid": 185888971165745,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 546314851525969
 		}
 	],
 	"sid": 969464561165898

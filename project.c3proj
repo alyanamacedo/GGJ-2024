@@ -238,6 +238,14 @@
 					"file-info": {
 						"purpose": "none"
 					}
+				},
+				{
+					"name": "SFX_HammerMiss_old.ogg",
+					"type": "audio/ogg; codecs=vorbis",
+					"sid": 746885222410941,
+					"file-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": [
