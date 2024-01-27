@@ -268,11 +268,11 @@
 										{
 											"id": "fade-volume",
 											"objectClass": "Audio",
-											"sid": 779180452564325,
+											"sid": 879509330253262,
 											"parameters": {
 												"tag": "tag",
 												"db": "-100",
-												"duration": "2",
+												"duration": "0.5",
 												"ending": "stop"
 											}
 										},
@@ -505,10 +505,10 @@
 										{
 											"id": "set-playback-rate",
 											"objectClass": "Audio",
-											"sid": 852539104800737,
+											"sid": 759180917545948,
 											"parameters": {
 												"tag": "\"SFX_Dialog\"",
-												"playback-rate": "random(1,1.25)"
+												"playback-rate": "random(1,2)"
 											}
 										}
 									],
@@ -532,10 +532,10 @@
 										{
 											"id": "set-playback-rate",
 											"objectClass": "Audio",
-											"sid": 332997637103493,
+											"sid": 617726587060639,
 											"parameters": {
 												"tag": "\"SFX_HammerHit\"",
-												"playback-rate": "random(1,1.25)"
+												"playback-rate": "random(1,2)"
 											}
 										}
 									],
@@ -559,10 +559,10 @@
 										{
 											"id": "set-playback-rate",
 											"objectClass": "Audio",
-											"sid": 572139458912167,
+											"sid": 816242447074063,
 											"parameters": {
 												"tag": "\"SFX_HammerMiss\"",
-												"playback-rate": "random(1,1.25)"
+												"playback-rate": "random(1,2)"
 											}
 										}
 									],

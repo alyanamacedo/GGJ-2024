@@ -15,6 +15,64 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 759063397112099
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 612789806584384,
+					"parameters": {
+						"variable": "VisitedTitle",
+						"value": "true"
+					}
+				},
+				{
+					"callFunction": "PlayMusic",
+					"sid": 574228867171724,
+					"parameters": [
+						"\"MUS_Menu\"",
+						"0",
+						"\"MUS\"",
+						"0"
+					]
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 246435148181075,
+					"disabled": true,
+					"parameters": {
+						"seconds": "3"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 270799238144541,
+					"disabled": true,
+					"parameters": {
+						"layout": "Title Screen"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "VFX_HammerHit",
+					"sid": 688098607858476,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 619032578253664
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
 					"id": "every-tick",
 					"objectClass": "System",
 					"sid": 897238408011102
@@ -369,6 +427,29 @@
 							],
 							"actions": [
 								{
+									"callFunction": "PlayAudio",
+									"sid": 395745044953538,
+									"disabled": true,
+									"parameters": [
+										"\"SFX_HammerHit\"",
+										"0",
+										"\"SFX_HammerHit\"",
+										"1",
+										false
+									]
+								},
+								{
+									"callFunction": "PlayAudio",
+									"sid": 372487726019241,
+									"parameters": [
+										"\"UI_Swosh\"",
+										"0",
+										"\"UI_Swosh\"",
+										"1",
+										false
+									]
+								},
+								{
 									"callFunction": "AudienceMeter",
 									"sid": 545433821288267,
 									"parameters": [
@@ -399,6 +480,23 @@
 									"sid": 278237762482855,
 									"parameters": {
 										"animation": "\"Hammer\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "VFX_HammerHit",
+									"sid": 478009251946254,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "VFX_HammerHit",
+									"sid": 122881779020610,
+									"parameters": {
+										"animation": "\"Hit\"",
 										"from": "beginning"
 									}
 								},
@@ -434,6 +532,32 @@
 						}
 					],
 					"actions": [
+						{
+							"callFunction": "PlayAudio",
+							"sid": 404670660846413,
+							"parameters": [
+								"\"SFX_HammerMiss\"",
+								"0",
+								"\"SFX_HammerMiss\"",
+								"1",
+								false
+							]
+						},
+						{
+							"type": "comment",
+							"text": "repetir parâmetros no aplauso e na risada:"
+						},
+						{
+							"callFunction": "PlayAudio",
+							"sid": 768615210789398,
+							"parameters": [
+								"\"SFX_Boo+96\"",
+								"0",
+								"\"SFX_Boo\"",
+								"0",
+								true
+							]
+						},
 						{
 							"callFunction": "AudienceMeter",
 							"sid": 211749795927238,

@@ -1443,6 +1443,35 @@
 						"angle": 0,
 						"zElevation": 0
 					}
+				},
+				{
+					"type": "VFX_HammerHit",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Hit",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 272458,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 643,
+						"y": 358,
+						"width": 127,
+						"height": 119,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
 				}
 			],
 			"sid": 994804351363502,

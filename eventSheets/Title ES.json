@@ -2,6 +2,109 @@
 	"name": "Title ES",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "VisitedTitle",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 252789124450260
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 325194461391791
+				}
+			],
+			"actions": [
+				{
+					"type": "comment",
+					"text": ""
+				},
+				{
+					"id": "fade-volume",
+					"objectClass": "Audio",
+					"sid": 674974816161781,
+					"disabled": true,
+					"parameters": {
+						"tag": "\"MUS\"",
+						"db": "-100",
+						"duration": "0.5",
+						"ending": "stop"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 676804516519171,
+					"disabled": true,
+					"parameters": {
+						"audio-file": "MUS_Title",
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"MUS\""
+					}
+				}
+			],
+			"sid": 180784637418218,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 186083426334845,
+							"parameters": {
+								"variable": "VisitedTitle"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "PlayMusic",
+							"sid": 821902749756238,
+							"parameters": [
+								"\"MUS_Title\"",
+								"0",
+								"\"MUS\"",
+								"0"
+							]
+						}
+					],
+					"sid": 511742665410090
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 244726493471270
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "PlayMusic",
+							"sid": 636867266995164,
+							"parameters": [
+								"\"MUS_Title\"",
+								"0",
+								"\"MUS\"",
+								"1"
+							]
+						}
+					],
+					"sid": 816127105168325
+				}
+			]
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{

@@ -72,7 +72,9 @@
 	],
 	"uniqueId": "l1hc2xznznw",
 	"objectTypes": {
-		"items": [],
+		"items": [
+			"VFX_HammerHit"
+		],
 		"subfolders": [
 			{
 				"items": [
@@ -158,31 +160,190 @@
 		"sound": {
 			"items": [
 				{
-					"name": "SFX_FallGras.webm",
-					"type": "audio/webm; codecs=opus",
-					"sid": 195814246975043,
+					"name": "UI_Click.ogg",
+					"type": "audio/ogg; codecs=vorbis",
+					"sid": 461381150915803,
 					"file-info": {
 						"purpose": "none"
 					}
 				},
 				{
-					"name": "SFX_Laugh.webm",
-					"type": "audio/webm; codecs=opus",
-					"sid": 348692200124763,
+					"name": "SFX_HammerMiss.ogg",
+					"type": "audio/ogg; codecs=vorbis",
+					"sid": 353539650572269,
 					"file-info": {
 						"purpose": "none"
 					}
 				},
 				{
-					"name": "SFX.webm",
-					"type": "audio/webm; codecs=opus",
-					"sid": 124707646730915,
+					"name": "SFX_HammerHit.ogg",
+					"type": "audio/ogg; codecs=vorbis",
+					"sid": 163832406519273,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "SFX_Boo-96.ogg",
+					"type": "audio/ogg; codecs=vorbis",
+					"sid": 317386768766792,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "SFX_Boo+96.ogg",
+					"type": "audio/ogg; codecs=vorbis",
+					"sid": 338360134222658,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "SFX_Applauses-96.ogg",
+					"type": "audio/ogg; codecs=vorbis",
+					"sid": 854004855781907,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "SFX_Applause+96.ogg",
+					"type": "audio/ogg; codecs=vorbis",
+					"sid": 971139308166785,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "UI_Swosh.ogg",
+					"type": "audio/ogg; codecs=vorbis",
+					"sid": 347778151812895,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "SFX_Laugh+96.ogg",
+					"type": "audio/ogg; codecs=vorbis",
+					"sid": 653320551179629,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "SFX_Laugh-96.ogg",
+					"type": "audio/ogg; codecs=vorbis",
+					"sid": 627740940875685,
 					"file-info": {
 						"purpose": "none"
 					}
 				}
 			],
-			"subfolders": []
+			"subfolders": [
+				{
+					"items": [
+						{
+							"name": "SFX_SmallCrowd.ogg",
+							"type": "audio/ogg; codecs=vorbis",
+							"sid": 172046387984371,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "SFX_MisLaugh.ogg",
+							"type": "audio/ogg; codecs=vorbis",
+							"sid": 627921735804938,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "SFX_SmallLaugh.ogg",
+							"type": "audio/ogg; codecs=vorbis",
+							"sid": 967886632656810,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Laugh 2.ogg",
+							"type": "audio/ogg; codecs=vorbis",
+							"sid": 911782395020077,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "SFX_EndBoo.ogg",
+							"type": "audio/ogg; codecs=vorbis",
+							"sid": 358846249717453,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "SFX_MidBoo.ogg",
+							"type": "audio/ogg; codecs=vorbis",
+							"sid": 108907901711156,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "UI_ClickRelease.ogg",
+							"type": "audio/ogg; codecs=vorbis",
+							"sid": 452103922616998,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "ENV_BackLaugh.ogg",
+							"type": "audio/ogg; codecs=vorbis",
+							"sid": 982546304013421,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "UI_ClickPress.ogg",
+							"type": "audio/ogg; codecs=vorbis",
+							"sid": 293308871986412,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "SFX_Applauses.ogg",
+							"type": "audio/ogg; codecs=vorbis",
+							"sid": 286286430154294,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "SFX_SmallLaugh2.ogg",
+							"type": "audio/ogg; codecs=vorbis",
+							"sid": 625299289143453,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "SFX_SoftBoo.ogg",
+							"type": "audio/ogg; codecs=vorbis",
+							"sid": 540171834982233,
+							"file-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "WIP"
+				}
+			]
 		},
 		"music": {
 			"items": [
