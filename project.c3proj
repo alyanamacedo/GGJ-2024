@@ -247,6 +247,22 @@
 					"file-info": {
 						"purpose": "none"
 					}
+				},
+				{
+					"name": "SFX_PunchLine.ogg",
+					"type": "audio/ogg; codecs=vorbis",
+					"sid": 446040446345319,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "SFX_Dialog.ogg",
+					"type": "audio/ogg; codecs=vorbis",
+					"sid": 275312616064981,
+					"file-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": [

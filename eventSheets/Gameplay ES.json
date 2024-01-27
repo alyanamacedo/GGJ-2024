@@ -42,10 +42,10 @@
 				},
 				{
 					"callFunction": "PlayMusic",
-					"sid": 574228867171724,
+					"sid": 421862414939601,
 					"parameters": [
 						"\"MUS_Menu\"",
-						"0",
+						"-8",
 						"\"MUS\"",
 						"0"
 					]
@@ -75,6 +75,18 @@
 					"parameters": {
 						"visibility": "invisible"
 					}
+				},
+				{
+					"callFunction": "PlayAudio",
+					"sid": 937561044334468,
+					"parameters": [
+						"\"SFX_Applause+96\"",
+						"2",
+						"\"SFX_Applause\"",
+						"0",
+						true,
+						"3"
+					]
 				}
 			],
 			"sid": 619032578253664
@@ -397,7 +409,37 @@
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "hittable",
-											"sid": 734967899552182,
+											"sid": 216775072289346,
+											"parameters": {
+												"instance-variable": "type",
+												"comparison": 0,
+												"value": "\"joke\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "PlayAudio",
+											"sid": 191572450429099,
+											"parameters": [
+												"\"SFX_Dialog\"",
+												"0",
+												"\"SFX_Dialog\"",
+												"0",
+												false,
+												"0"
+											]
+										}
+									],
+									"sid": 521559500552898
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "hittable",
+											"sid": 279399713026787,
 											"parameters": {
 												"instance-variable": "type",
 												"comparison": 0,
@@ -413,16 +455,45 @@
 										{
 											"id": "set-animation",
 											"objectClass": "player",
-											"sid": 209593474786507,
+											"sid": 187873330488558,
 											"parameters": {
 												"animation": "\"Punch\"",
 												"from": "beginning"
 											}
 										},
 										{
+											"id": "set-visible",
+											"objectClass": "VFX_HammerHit",
+											"sid": 733417864288222,
+											"parameters": {
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "VFX_HammerHit",
+											"sid": 638313469684659,
+											"parameters": {
+												"animation": "\"Hit\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"callFunction": "PlayAudio",
+											"sid": 708413126033325,
+											"parameters": [
+												"\"SFX_PunchLine\"",
+												"0",
+												"\"SFX_PunchLine\"",
+												"1",
+												false,
+												"0"
+											]
+										},
+										{
 											"id": "wait",
 											"objectClass": "System",
-											"sid": 998609926814336,
+											"sid": 203749434629601,
 											"parameters": {
 												"seconds": "0.2"
 											}
@@ -430,14 +501,26 @@
 										{
 											"id": "set-animation",
 											"objectClass": "player",
-											"sid": 585935130316375,
+											"sid": 620295067552773,
 											"parameters": {
 												"animation": "\"Idle\"",
 												"from": "beginning"
 											}
+										},
+										{
+											"callFunction": "PlayAudio",
+											"sid": 544474992469975,
+											"parameters": [
+												"\"SFX_Laugh+96\"",
+												"2",
+												"\"SFX_Laugh\"",
+												"0",
+												true,
+												"5"
+											]
 										}
 									],
-									"sid": 521559500552898
+									"sid": 947462473483297
 								}
 							],
 							"isOrBlock": true
@@ -511,13 +594,14 @@
 							"actions": [
 								{
 									"callFunction": "PlayAudio",
-									"sid": 750595375127684,
+									"sid": 873407683135633,
 									"parameters": [
 										"\"SFX_HammerHit\"",
-										"0",
+										"-1",
 										"\"SFX_HammerHit\"",
 										"1",
-										false
+										false,
+										"0"
 									]
 								},
 								{
@@ -609,13 +693,14 @@
 						},
 						{
 							"callFunction": "PlayAudio",
-							"sid": 768615210789398,
+							"sid": 419625299534941,
 							"parameters": [
 								"\"SFX_Boo+96\"",
-								"0",
+								"1",
 								"\"SFX_Boo\"",
 								"0",
-								true
+								true,
+								"3"
 							]
 						},
 						{
@@ -646,13 +731,14 @@
 							"actions": [
 								{
 									"callFunction": "PlayAudio",
-									"sid": 773290304409276,
+									"sid": 812800816727970,
 									"parameters": [
 										"\"SFX_HammerMiss\"",
-										"0",
+										"-1",
 										"\"SFX_HammerMiss\"",
 										"1",
-										false
+										false,
+										"0"
 									]
 								}
 							],
@@ -981,6 +1067,10 @@
 				}
 			],
 			"sid": 546314851525969
+		},
+		{
+			"eventType": "comment",
+			"text": "Quando acabar a fase der vaia ou aplauso dependendo do risometro"
 		}
 	],
 	"sid": 969464561165898

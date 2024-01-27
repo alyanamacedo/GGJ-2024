@@ -395,6 +395,13 @@
 									"initialValue": "false",
 									"comment": "",
 									"sid": 672324350687911
+								},
+								{
+									"name": "duration",
+									"type": "number",
+									"initialValue": "3",
+									"comment": "Tempo antes de dar fadeout",
+									"sid": 539466225663235
 								}
 							],
 							"eventType": "function-block",
@@ -505,10 +512,10 @@
 										{
 											"id": "set-playback-rate",
 											"objectClass": "Audio",
-											"sid": 759180917545948,
+											"sid": 735272551613999,
 											"parameters": {
 												"tag": "\"SFX_Dialog\"",
-												"playback-rate": "random(1,2)"
+												"playback-rate": "random(1,1.5)"
 											}
 										}
 									],
@@ -532,10 +539,10 @@
 										{
 											"id": "set-playback-rate",
 											"objectClass": "Audio",
-											"sid": 617726587060639,
+											"sid": 976135479015396,
 											"parameters": {
 												"tag": "\"SFX_HammerHit\"",
-												"playback-rate": "random(1,2)"
+												"playback-rate": "random(1,1.5)"
 											}
 										}
 									],
@@ -559,10 +566,10 @@
 										{
 											"id": "set-playback-rate",
 											"objectClass": "Audio",
-											"sid": 816242447074063,
+											"sid": 476859523551557,
 											"parameters": {
 												"tag": "\"SFX_HammerMiss\"",
-												"playback-rate": "random(1,2)"
+												"playback-rate": "random(1,1.5)"
 											}
 										}
 									],
@@ -627,12 +634,12 @@
 										{
 											"id": "play-by-name",
 											"objectClass": "Audio",
-											"sid": 281171686538522,
+											"sid": 219169499299796,
 											"parameters": {
 												"folder": "sounds",
 												"audio-file-name": "fileName",
 												"loop": "looping",
-												"volume": "volume",
+												"volume": "-100",
 												"stereo-pan": "0",
 												"tag-optional": "tag"
 											}
@@ -640,11 +647,11 @@
 										{
 											"id": "fade-volume",
 											"objectClass": "Audio",
-											"sid": 366921258427118,
+											"sid": 222941253814184,
 											"parameters": {
 												"tag": "tag",
-												"db": "-8",
-												"duration": "2",
+												"db": "volume",
+												"duration": "0.5",
 												"ending": "keep-playing"
 											}
 										},
@@ -660,20 +667,9 @@
 										{
 											"id": "wait",
 											"objectClass": "System",
-											"sid": 928923125103188,
+											"sid": 810657430905594,
 											"parameters": {
-												"seconds": "3"
-											}
-										},
-										{
-											"id": "fade-volume",
-											"objectClass": "Audio",
-											"sid": 469676289976309,
-											"parameters": {
-												"tag": "tag",
-												"db": "-8",
-												"duration": "2",
-												"ending": "keep-playing"
+												"seconds": "duration"
 											}
 										},
 										{
@@ -1091,7 +1087,8 @@
 								"0",
 								"\"SFX_Dialog\"",
 								"0",
-								false
+								false,
+								"0"
 							]
 						}
 					],
