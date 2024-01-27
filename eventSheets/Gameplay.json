@@ -1,0 +1,751 @@
+{
+	"name": "Gameplay",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "belt_speed",
+			"type": "number",
+			"initialValue": "500",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 818876564600325
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 897238408011102
+				}
+			],
+			"actions": [
+				{
+					"id": "set-x",
+					"objectClass": "belt",
+					"sid": 838374614300145,
+					"parameters": {
+						"x": "Self.X - belt_speed*dt"
+					}
+				},
+				{
+					"id": "set-x",
+					"objectClass": "hittable",
+					"sid": 705195102046462,
+					"parameters": {
+						"x": "Self.X - belt_speed*dt"
+					}
+				}
+			],
+			"sid": 979594147507471,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Haverá uma pequena distorção visual na esteira nas emendas, pois quando a esteira reseta a posição, não considera que a posição atual está em movimento"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-x",
+							"objectClass": "belt",
+							"sid": 726896097831000,
+							"parameters": {
+								"comparison": 3,
+								"x-co-ordinate": "-2774"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-x",
+							"objectClass": "belt",
+							"sid": 355146069250803,
+							"parameters": {
+								"x": "0"
+							}
+						}
+					],
+					"sid": 593734934201118
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "hitArea2",
+					"sid": 966667269282411,
+					"parameters": {
+						"object": "hittable"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 424290810686903,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "hittable",
+							"sid": 216855539399092,
+							"parameters": {
+								"instance-variable": "type",
+								"comparison": 0,
+								"value": "\"joke\""
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "hittable",
+							"sid": 147132876573143,
+							"parameters": {
+								"instance-variable": "type",
+								"comparison": 0,
+								"value": "\"finaljoke\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 254370331801922,
+							"parameters": {
+								"seconds": "1150/belt_speed-1"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "player",
+							"sid": 778685880611844,
+							"parameters": {
+								"animation": "\"Speaker\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 847864997615206,
+					"isOrBlock": true
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 949527205000067,
+					"parameters": {
+						"object": "btn"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "btn",
+					"sid": 472781075212240,
+					"parameters": {
+						"frame-number": "1"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 424992195454766,
+					"parameters": {
+						"seconds": "0.1"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "btn",
+					"sid": 832910337775100,
+					"parameters": {
+						"frame-number": "0"
+					}
+				}
+			],
+			"sid": 189266547520714
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 558927271936385,
+					"parameters": {
+						"object": "btn"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 355244984064122,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "target",
+							"sid": 975833253934721,
+							"parameters": {
+								"object": "hittable"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "hittable",
+							"sid": 856449701703534,
+							"parameters": {
+								"collisions": "disabled"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "hittable",
+							"sid": 917245918580271
+						}
+					],
+					"sid": 693674156368508,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "hittable",
+									"sid": 596153582585372,
+									"parameters": {
+										"instance-variable": "type",
+										"comparison": 0,
+										"value": "\"joke\""
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "hittable",
+									"sid": 411746013792230,
+									"parameters": {
+										"instance-variable": "type",
+										"comparison": 0,
+										"value": "\"finaljoke\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "AudienceMeter",
+									"sid": 653468592539060,
+									"parameters": [
+										true,
+										"hittable.pts_audicence"
+									]
+								}
+							],
+							"sid": 530251147316566,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "hittable",
+											"sid": 734967899552182,
+											"parameters": {
+												"instance-variable": "type",
+												"comparison": 0,
+												"value": "\"finaljoke\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "player",
+											"sid": 209593474786507,
+											"parameters": {
+												"animation": "\"Punch\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 998609926814336,
+											"parameters": {
+												"seconds": "0.2"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "player",
+											"sid": 585935130316375,
+											"parameters": {
+												"animation": "\"Idle\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 521559500552898
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "hittable",
+									"sid": 905193415193363,
+									"parameters": {
+										"instance-variable": "type",
+										"comparison": 0,
+										"value": "\"liker\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "AudienceMeter",
+									"sid": 738619025823967,
+									"parameters": [
+										false,
+										"hittable.pts_audicence"
+									]
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "player",
+									"sid": 572946185082766,
+									"parameters": {
+										"animation": "\"Hammer\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 310078498971183,
+									"parameters": {
+										"seconds": "0.2"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "player",
+									"sid": 556874406490837,
+									"parameters": {
+										"animation": "\"Idle\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 797364665296656
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "hittable",
+									"sid": 399694980922401,
+									"parameters": {
+										"instance-variable": "type",
+										"comparison": 0,
+										"value": "\"hater\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "AudienceMeter",
+									"sid": 545433821288267,
+									"parameters": [
+										true,
+										"hittable.pts_audicence"
+									]
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "score_txt",
+									"sid": 554664451953725,
+									"parameters": {
+										"instance-variable": "score",
+										"value": "score_txt.score+hittable.pts_score"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "score_txt",
+									"sid": 835880192127796,
+									"parameters": {
+										"text": "Functions.ScoreToText(score_txt.score)"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "player",
+									"sid": 278237762482855,
+									"parameters": {
+										"animation": "\"Hammer\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 312198779868862,
+									"parameters": {
+										"seconds": "0.2"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "player",
+									"sid": 322961680972320,
+									"parameters": {
+										"animation": "\"Idle\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 641998157229903
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 226528755660666
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "AudienceMeter",
+							"sid": 211749795927238,
+							"parameters": [
+								false,
+								"20"
+							]
+						}
+					],
+					"sid": 708791972956088
+				}
+			]
+		},
+		{
+			"functionName": "AudienceMeter",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "increase",
+					"type": "boolean",
+					"initialValue": "true",
+					"comment": "",
+					"sid": 180971651466161
+				},
+				{
+					"name": "value",
+					"type": "number",
+					"initialValue": "10",
+					"comment": "",
+					"sid": 204543073957787
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 242807243416901,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 715886603761972,
+							"parameters": {
+								"variable": "increase"
+							}
+						},
+						{
+							"id": "compare-x",
+							"objectClass": "audience_pointer",
+							"sid": 418677200976437,
+							"parameters": {
+								"comparison": 3,
+								"x-co-ordinate": "962-value"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-x",
+							"objectClass": "audience_pointer",
+							"sid": 227089365888498,
+							"parameters": {
+								"x": "audience_pointer.X+value"
+							}
+						},
+						{
+							"id": "set-active",
+							"objectClass": "audience_pointer",
+							"sid": 293067081224265,
+							"behaviorType": "Senóide",
+							"parameters": {
+								"state": "active"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 510951941151672,
+							"parameters": {
+								"seconds": "1"
+							}
+						},
+						{
+							"id": "set-active",
+							"objectClass": "audience_pointer",
+							"sid": 467012316555883,
+							"behaviorType": "Senóide",
+							"parameters": {
+								"state": "inactive"
+							}
+						}
+					],
+					"sid": 494530216800365
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 643904095660571,
+							"parameters": {
+								"variable": "increase"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-x",
+							"objectClass": "audience_pointer",
+							"sid": 927454495939290,
+							"parameters": {
+								"comparison": 5,
+								"x-co-ordinate": "230+value"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-x",
+							"objectClass": "audience_pointer",
+							"sid": 779903224315505,
+							"parameters": {
+								"x": "audience_pointer.X-value"
+							}
+						},
+						{
+							"id": "set-active",
+							"objectClass": "audience_pointer",
+							"sid": 365457321106848,
+							"behaviorType": "Senóide",
+							"parameters": {
+								"state": "active"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 825492122501594,
+							"parameters": {
+								"seconds": "1"
+							}
+						},
+						{
+							"id": "set-active",
+							"objectClass": "audience_pointer",
+							"sid": 352865106076159,
+							"behaviorType": "Senóide",
+							"parameters": {
+								"state": "inactive"
+							}
+						}
+					],
+					"sid": 402423109580071
+				}
+			]
+		},
+		{
+			"functionName": "ScoreToText",
+			"functionDescription": "Trata a numeração para que tenha sempre quatro dígitos",
+			"functionCategory": "",
+			"functionReturnType": "string",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "score",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 218065511139820
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 579521136477969,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 637441311272584,
+							"parameters": {
+								"variable": "score",
+								"comparison": 2,
+								"value": "10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 690907273568863,
+							"parameters": {
+								"value": "\"000\"&score"
+							}
+						}
+					],
+					"sid": 275407788156859
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 707645357943667
+						}
+					],
+					"actions": [],
+					"sid": 942917515014455,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 634636989812421,
+									"parameters": {
+										"variable": "score",
+										"comparison": 2,
+										"value": "100"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 770693484898074,
+									"parameters": {
+										"value": "\"00\"&score"
+									}
+								}
+							],
+							"sid": 985459689828564
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 991705736461649
+								}
+							],
+							"actions": [],
+							"sid": 745318653065021,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 520160734807231,
+											"parameters": {
+												"variable": "score",
+												"comparison": 2,
+												"value": "1000"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-function-return-value",
+											"objectClass": "Functions",
+											"sid": 468558759477601,
+											"parameters": {
+												"value": "\"0\"&score"
+											}
+										}
+									],
+									"sid": 151211724859725
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 419605975757065
+										}
+									],
+									"actions": [
+										{
+											"id": "set-function-return-value",
+											"objectClass": "Functions",
+											"sid": 279206368215929,
+											"parameters": {
+												"value": "\"\"&score"
+											}
+										}
+									],
+									"sid": 928277640867172
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"sid": 969464561165898
+}

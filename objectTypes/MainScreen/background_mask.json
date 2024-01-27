@@ -1,0 +1,52 @@
+{
+	"name": "background_mask",
+	"plugin-id": "Sprite",
+	"sid": 793571396386193,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 1921,
+						"height": 1079,
+						"originX": 0,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 749451,
+						"collisionPoly": {
+							"points": [
+								0.13841368584758942,
+								0,
+								1,
+								0,
+								1,
+								1,
+								0,
+								1,
+								0.06842923794712286,
+								0.033386327503974564
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 246606866724063,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

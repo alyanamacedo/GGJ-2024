@@ -1,0 +1,30 @@
+{
+	"name": "Credits ES",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 511209336705270,
+					"parameters": {
+						"object": "CreditsBackButton"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 370206507109240,
+					"parameters": {
+						"layout": "Title Screen"
+					}
+				}
+			],
+			"sid": 783569544842415
+		}
+	],
+	"sid": 130921360261285
+}
