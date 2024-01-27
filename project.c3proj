@@ -73,7 +73,8 @@
 	"uniqueId": "l1hc2xznznw",
 	"objectTypes": {
 		"items": [
-			"VFX_HammerHit"
+			"VFX_HammerHit",
+			"TargetScore"
 		],
 		"subfolders": [
 			{
