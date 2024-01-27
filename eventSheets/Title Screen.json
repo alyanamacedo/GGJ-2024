@@ -1,0 +1,30 @@
+{
+	"name": "Title Screen",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 598600721095399,
+					"parameters": {
+						"object": "StartButton"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 469592288818194,
+					"parameters": {
+						"layout": "Level01"
+					}
+				}
+			],
+			"sid": 193252269328205
+		}
+	],
+	"sid": 909139548164055
+}

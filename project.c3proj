@@ -36,6 +36,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "TiledBg",
 			"name": "Tiled Background",
 			"author": "Scirra",
@@ -54,31 +61,70 @@
 			"name": "Sine",
 			"author": "Scirra",
 			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "noise",
+			"name": "Noise",
+			"author": "Scirra",
+			"bundled": false
 		}
 	],
 	"uniqueId": "l1hc2xznznw",
 	"objectTypes": {
-		"items": [
-			"belt",
-			"hittable",
-			"btn",
-			"target",
-			"Touch",
-			"audience_bg",
-			"btn_bg",
-			"score_txt",
-			"player",
-			"hitArea2",
-			"background",
-			"speaker",
-			"audience_pointer",
-			"GAMEPLAYLaughTrack",
-			"background_mask",
-			"belt2",
-			"Keyboard",
-			"Audio"
-		],
-		"subfolders": []
+		"items": [],
+		"subfolders": [
+			{
+				"items": [
+					"CreditsButton",
+					"ExitButton",
+					"StartButton",
+					"TitleGGJLabel",
+					"GameTitle",
+					"TitleBg"
+				],
+				"subfolders": [],
+				"name": "TitleScreen"
+			},
+			{
+				"items": [
+					"Audio",
+					"Keyboard",
+					"Touch"
+				],
+				"subfolders": [],
+				"name": "System"
+			},
+			{
+				"items": [
+					"audience_bg",
+					"audience_pointer",
+					"background",
+					"background_mask",
+					"belt",
+					"belt2",
+					"btn",
+					"btn_bg",
+					"GAMEPLAYLaughTrack",
+					"hitArea2",
+					"hittable",
+					"player",
+					"score_txt",
+					"speaker",
+					"target"
+				],
+				"subfolders": [],
+				"name": "MainScreen"
+			},
+			{
+				"items": [
+					"CreditsBackButton",
+					"CreditsBg"
+				],
+				"subfolders": [],
+				"name": "CreditsScreen"
+			}
+		]
 	},
 	"autosaveData": null,
 	"containers": [],
@@ -89,14 +135,18 @@
 	"layouts": {
 		"items": [
 			"Level01",
-			"Audio Test"
+			"Audio Test",
+			"Title Screen",
+			"Credits Screen"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"Event sheet 1",
-			"AudioFunctions"
+			"Gameplay ES",
+			"AudioFunctions",
+			"Title ES",
+			"Credits ES"
 		],
 		"subfolders": []
 	},
@@ -160,7 +210,40 @@
 			"subfolders": []
 		},
 		"font": {
-			"items": [],
+			"items": [
+				{
+					"name": "CCLADRONN W00 BOLD ITALIC.TTF",
+					"type": "application/font-sfnt",
+					"sid": 426517429316753,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "CCLADRONN W00 ITALIC.TTF",
+					"type": "application/font-sfnt",
+					"sid": 146991587004282,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "CCLADRONN W00 REGULAR.TTF",
+					"type": "application/font-sfnt",
+					"sid": 158422581859433,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Comical Cartoon.ttf",
+					"type": "application/font-sfnt",
+					"sid": 682069493094424,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"icon": {
@@ -296,5 +379,5 @@
 	},
 	"viewportWidth": 1920,
 	"viewportHeight": 1080,
-	"firstLayout": null
+	"firstLayout": "Title Screen"
 }

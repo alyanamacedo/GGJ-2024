@@ -1,0 +1,14 @@
+{
+	"name": "CreditsBackButton",
+	"plugin-id": "Text",
+	"sid": 251124518204987,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "noise",
+			"name": "Noise"
+		}
+	]
+}

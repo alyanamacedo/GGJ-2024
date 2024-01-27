@@ -1,0 +1,54 @@
+{
+	"name": "Title ES",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 598600721095399,
+					"parameters": {
+						"object": "StartButton"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 469592288818194,
+					"parameters": {
+						"layout": "Level01"
+					}
+				}
+			],
+			"sid": 193252269328205
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 389803328517016,
+					"parameters": {
+						"object": "CreditsButton"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 476218098327545,
+					"parameters": {
+						"layout": "Credits Screen"
+					}
+				}
+			],
+			"sid": 483193691888245
+		}
+	],
+	"sid": 909139548164055
+}
