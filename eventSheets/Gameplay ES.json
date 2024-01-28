@@ -179,6 +179,15 @@
 							}
 						},
 						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 656248357414123,
+							"parameters": {
+								"layer": "0",
+								"interactive": true
+							}
+						},
+						{
 							"id": "tween-two-properties",
 							"objectClass": "speaker",
 							"sid": 279865736534826,
@@ -566,6 +575,37 @@
 										"animation": "\"Animation 1\"",
 										"from": "beginning"
 									}
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 672218112582781,
+									"parameters": {
+										"object-to-create": "FeedbackGood",
+										"layer": "1",
+										"x": "643",
+										"y": "320",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "FeedbackGood",
+									"sid": 166456730123692,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "position",
+										"end-x": "Self.X",
+										"end-y": "Self.Y - 40",
+										"time": "0.3",
+										"ease": "noease",
+										"destroy-on-complete": "yes",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
 								}
 							],
 							"sid": 530251147316566,
@@ -708,6 +748,18 @@
 							],
 							"actions": [
 								{
+									"callFunction": "PlayAudio",
+									"sid": 892487316902198,
+									"parameters": [
+										"\"SFX_HammerMiss\"",
+										"-1",
+										"\"SFX_HammerMiss\"",
+										"1",
+										false,
+										"0"
+									]
+								},
+								{
 									"callFunction": "AudienceMeter",
 									"sid": 738619025823967,
 									"parameters": [
@@ -739,6 +791,37 @@
 									"parameters": {
 										"animation": "\"Idle\"",
 										"from": "beginning"
+									}
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 650118498719786,
+									"parameters": {
+										"object-to-create": "FeedbackBad",
+										"layer": "1",
+										"x": "643",
+										"y": "320",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "FeedbackBad",
+									"sid": 602735006177501,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "position",
+										"end-x": "Self.X",
+										"end-y": "Self.Y - 40",
+										"time": "0.3",
+										"ease": "noease",
+										"destroy-on-complete": "yes",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
 									}
 								}
 							],
@@ -929,6 +1012,37 @@
 							"text": "repetir parâmetros no aplauso e na risada:"
 						},
 						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 832446298555310,
+							"parameters": {
+								"object-to-create": "FeedbackBad",
+								"layer": "1",
+								"x": "643",
+								"y": "320",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "FeedbackBad",
+							"sid": 732601333788552,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "position",
+								"end-x": "Self.X",
+								"end-y": "Self.Y - 40",
+								"time": "0.3",
+								"ease": "noease",
+								"destroy-on-complete": "yes",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
 							"callFunction": "PlayAudio",
 							"sid": 419625299534941,
 							"parameters": [
@@ -1006,6 +1120,62 @@
 								}
 							],
 							"sid": 269488320803491
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 861702894574624,
+									"parameters": {
+										"variable": "next_target",
+										"comparison": 0,
+										"value": "\"liker\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "PlayAudio",
+									"sid": 572497200915412,
+									"parameters": [
+										"\"SFX_HammerMiss\"",
+										"-1",
+										"\"SFX_HammerMiss\"",
+										"1",
+										false,
+										"0"
+									]
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "player",
+									"sid": 427174935962747,
+									"parameters": {
+										"animation": "\"Hammer\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 445885457043888,
+									"parameters": {
+										"seconds": "0.2"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "player",
+									"sid": 107242175287383,
+									"parameters": {
+										"animation": "\"Idle\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 900575726441233
 						}
 					]
 				}

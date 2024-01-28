@@ -1840,7 +1840,13 @@
 					},
 					"uid": 690854,
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
 					"world": {
 						"x": -583,
 						"y": 541,
@@ -1869,7 +1875,13 @@
 					},
 					"uid": 617152,
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
 					"world": {
 						"x": -481,
 						"y": 247,

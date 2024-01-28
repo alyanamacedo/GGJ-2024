@@ -383,6 +383,15 @@
 							"parameters": {
 								"text": "user_score"
 							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 351772855976497,
+							"parameters": {
+								"layer": "0",
+								"interactive": false
+							}
 						}
 					],
 					"sid": 247152884077130
