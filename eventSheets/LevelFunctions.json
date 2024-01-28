@@ -1,0 +1,338 @@
+{
+	"name": "LevelFunctions",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "next_position",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 535179916352655
+		},
+		{
+			"functionName": "draw_next",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "Debug",
+					"sid": 184241362922286,
+					"parameters": {
+						"text": "Level1.At(next_position)"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 511943643642544,
+					"parameters": {
+						"variable": "next_position",
+						"value": "next_position + 1"
+					}
+				}
+			],
+			"sid": 205684093774303,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "0 é uma posição vazia, não desenhar nada"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 651546650261819,
+							"parameters": {
+								"first-value": "Level1.At(next_position)",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 268949404201391
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 524324615688005,
+							"parameters": {
+								"first-value": "Level1.At(next_position)",
+								"comparison": 0,
+								"second-value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 774465320780639,
+							"parameters": {
+								"object-to-create": "hittable",
+								"layer": "0",
+								"x": "2254",
+								"y": "367",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "hittable",
+							"sid": 104923533403211,
+							"parameters": {
+								"animation": "\"Joke\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "hittable",
+							"sid": 162503293423295,
+							"parameters": {
+								"instance-variable": "type",
+								"value": "\"joke\"\r"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "hittable",
+							"sid": 750181350694396,
+							"parameters": {
+								"instance-variable": "pts_score",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "hittable",
+							"sid": 303280994970539,
+							"parameters": {
+								"instance-variable": "pts_audicence",
+								"value": "80"
+							}
+						}
+					],
+					"sid": 111995719776439
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 846368159874101,
+							"parameters": {
+								"first-value": "Level1.At(next_position)",
+								"comparison": 0,
+								"second-value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 684403286947883,
+							"parameters": {
+								"object-to-create": "hittable",
+								"layer": "0",
+								"x": "2254",
+								"y": "367",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "hittable",
+							"sid": 195333089823823,
+							"parameters": {
+								"animation": "\"FinalJoke\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "hittable",
+							"sid": 159273829942073,
+							"parameters": {
+								"instance-variable": "type",
+								"value": "\"finaljoke\"\r"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "hittable",
+							"sid": 931406677997578,
+							"parameters": {
+								"instance-variable": "pts_score",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "hittable",
+							"sid": 141250540425450,
+							"parameters": {
+								"instance-variable": "pts_audicence",
+								"value": "120"
+							}
+						}
+					],
+					"sid": 954337415464516
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 873080660315124,
+							"parameters": {
+								"first-value": "Level1.At(next_position)",
+								"comparison": 0,
+								"second-value": "3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 417254570403952,
+							"parameters": {
+								"object-to-create": "hittable",
+								"layer": "0",
+								"x": "2254",
+								"y": "367",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "hittable",
+							"sid": 725029810946077,
+							"parameters": {
+								"animation": "\"Liker\" & int(random(1, 3))",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "hittable",
+							"sid": 482181817322161,
+							"parameters": {
+								"instance-variable": "type",
+								"value": "\"liker\"\r"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "hittable",
+							"sid": 886577115640802,
+							"parameters": {
+								"instance-variable": "pts_score",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "hittable",
+							"sid": 362275486249253,
+							"parameters": {
+								"instance-variable": "pts_audicence",
+								"value": "20"
+							}
+						}
+					],
+					"sid": 799734761176286
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 196225989240290,
+							"parameters": {
+								"first-value": "Level1.At(next_position)",
+								"comparison": 0,
+								"second-value": "4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 986931975611927,
+							"parameters": {
+								"object-to-create": "hittable",
+								"layer": "0",
+								"x": "2254",
+								"y": "367",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "hittable",
+							"sid": 606317939373056,
+							"parameters": {
+								"animation": "\"Hater\" & int(random(1, 6))",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "hittable",
+							"sid": 925173995344768,
+							"parameters": {
+								"instance-variable": "type",
+								"value": "\"hater\"\r"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "hittable",
+							"sid": 757706485291763,
+							"parameters": {
+								"instance-variable": "pts_score",
+								"value": "100"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "hittable",
+							"sid": 709563239722991,
+							"parameters": {
+								"instance-variable": "pts_audicence",
+								"value": "20"
+							}
+						}
+					],
+					"sid": 322700026647035
+				}
+			]
+		}
+	],
+	"sid": 927997356567949
+}

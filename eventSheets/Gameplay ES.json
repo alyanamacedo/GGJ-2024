@@ -32,6 +32,16 @@
 			"sid": 646186006984273
 		},
 		{
+			"eventType": "variable",
+			"name": "level_data_loaded",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 907112964496605
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -97,9 +107,60 @@
 						true,
 						"3"
 					]
+				},
+				{
+					"id": "request-project-file",
+					"objectClass": "AJAX",
+					"sid": 956711219681210,
+					"parameters": {
+						"tag": "\"hey\"",
+						"file": "Level1.json"
+					}
 				}
 			],
 			"sid": 619032578253664
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-completed",
+					"objectClass": "AJAX",
+					"sid": 764161275777800,
+					"parameters": {
+						"tag": "\"hey\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "load",
+					"objectClass": "Level1",
+					"sid": 328687474284086,
+					"parameters": {
+						"json": "AJAX.LastData"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "Debug",
+					"sid": 584346411757180,
+					"disabled": true,
+					"parameters": {
+						"text": "AJAX.LastData"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 495760417293688,
+					"parameters": {
+						"variable": "level_data_loaded",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 640361014636249
 		},
 		{
 			"eventType": "block",
@@ -1203,6 +1264,34 @@
 					"sid": 312713705973637
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 105733296379355,
+					"parameters": {
+						"interval-seconds": "0.5"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 781666325219010,
+					"parameters": {
+						"variable": "level_data_loaded"
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "draw_next",
+					"sid": 789838463022873
+				}
+			],
+			"sid": 170310342464013
 		}
 	],
 	"sid": 969464561165898
