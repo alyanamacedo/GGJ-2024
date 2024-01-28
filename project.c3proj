@@ -73,8 +73,8 @@
 	"uniqueId": "l1hc2xznznw",
 	"objectTypes": {
 		"items": [
-			"VFX_HammerHit",
-			"TargetScore"
+			"TargetScore",
+			"PauseButton"
 		],
 		"subfolders": [
 			{
@@ -114,7 +114,9 @@
 					"player",
 					"score_txt",
 					"speaker",
-					"target"
+					"target",
+					"VFX_HammerHit",
+					"hitAreaNear"
 				],
 				"subfolders": [],
 				"name": "MainScreen"

@@ -263,8 +263,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 3396,
-						"y": 347,
+						"x": 3427,
+						"y": 346,
 						"width": 218,
 						"height": 214,
 						"originX": 0.5,
@@ -1104,6 +1104,35 @@
 						"angle": 0,
 						"zElevation": 0
 					}
+				},
+				{
+					"type": "hitAreaNear",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 571895,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 900,
+						"y": 357,
+						"width": 50,
+						"height": 398,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
 				}
 			],
 			"sid": 860523451732197,
@@ -1703,6 +1732,50 @@
 						"y": 345,
 						"width": 218,
 						"height": 214,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PauseButton",
+					"properties": {
+						"text": "II",
+						"enable-bbcode": true,
+						"font": "Comical Cartoon",
+						"size": 32,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0.9411764705882353,
+							0.7568627450980392,
+							0.11372549019607843,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"icon-set": -1,
+						"initially-visible": true,
+						"origin": "center",
+						"read-aloud": false
+					},
+					"uid": 261604,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 960,
+						"y": 98,
+						"width": 208,
+						"height": 167,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
