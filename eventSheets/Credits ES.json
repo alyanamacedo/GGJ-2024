@@ -15,6 +15,18 @@
 			],
 			"actions": [
 				{
+					"callFunction": "PlayAudio",
+					"sid": 755326749521870,
+					"parameters": [
+						"\"UI_Swosh\"",
+						"0",
+						"\"UI_Swosh\"",
+						"1",
+						false,
+						"0"
+					]
+				},
+				{
 					"id": "go-to-layout",
 					"objectClass": "System",
 					"sid": 370206507109240,

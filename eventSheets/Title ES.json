@@ -118,6 +118,18 @@
 			],
 			"actions": [
 				{
+					"callFunction": "PlayAudio",
+					"sid": 104647445814918,
+					"parameters": [
+						"\"UI_Swosh\"",
+						"0",
+						"\"UI_Swosh\"",
+						"1",
+						false,
+						"0"
+					]
+				},
+				{
 					"id": "go-to-layout",
 					"objectClass": "System",
 					"sid": 309516281667287,
@@ -141,6 +153,18 @@
 				}
 			],
 			"actions": [
+				{
+					"callFunction": "PlayAudio",
+					"sid": 180680038073413,
+					"parameters": [
+						"\"UI_Swosh\"",
+						"0",
+						"\"UI_Swosh\"",
+						"1",
+						false,
+						"0"
+					]
+				},
 				{
 					"id": "go-to-layout",
 					"objectClass": "System",
