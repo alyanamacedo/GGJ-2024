@@ -97,9 +97,9 @@
 						},
 						{
 							"callFunction": "PlayMusic",
-							"sid": 795237833614917,
+							"sid": 950496578342317,
 							"parameters": [
-								"\"MUS_Menu\"",
+								"\"MUS_Game_Loop\"",
 								"-8",
 								"\"MUS\"",
 								"0"

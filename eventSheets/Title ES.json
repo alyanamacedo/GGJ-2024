@@ -36,19 +36,6 @@
 						"duration": "0.5",
 						"ending": "stop"
 					}
-				},
-				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 676804516519171,
-					"disabled": true,
-					"parameters": {
-						"audio-file": "MUS_Title",
-						"loop": "looping",
-						"volume": "0",
-						"stereo-pan": "0",
-						"tag-optional": "\"MUS\""
-					}
 				}
 			],
 			"sid": 180784637418218,
@@ -68,9 +55,9 @@
 					"actions": [
 						{
 							"callFunction": "PlayMusic",
-							"sid": 821902749756238,
+							"sid": 775762100752382,
 							"parameters": [
-								"\"MUS_Title\"",
+								"\"MUS_Menu\"",
 								"0",
 								"\"MUS\"",
 								"0"
@@ -91,9 +78,9 @@
 					"actions": [
 						{
 							"callFunction": "PlayMusic",
-							"sid": 636867266995164,
+							"sid": 949489777546361,
 							"parameters": [
-								"\"MUS_Title\"",
+								"\"MUS_Menu\"",
 								"0",
 								"\"MUS\"",
 								"1"
