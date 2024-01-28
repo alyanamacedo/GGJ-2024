@@ -89,7 +89,13 @@
 		"items": [
 			"TargetScore",
 			"Debug",
-			"backgrounbdMask_blue"
+			"backgrounbdMask_blue",
+			"LvCompleteTitle",
+			"LvCompleteScoreLabel",
+			"LvCompleteScore",
+			"LvCompleteAgainLabel",
+			"LvCompleteAgainYes",
+			"LvCompleteAgainNo"
 		],
 		"subfolders": [
 			{
@@ -134,7 +140,8 @@
 					"target",
 					"VFX_HammerHit",
 					"hitAreaNear",
-					"PauseButton"
+					"PauseButton",
+					"GameplayPause"
 				],
 				"subfolders": [],
 				"name": "MainScreen"

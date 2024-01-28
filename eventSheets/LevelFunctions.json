@@ -330,6 +330,62 @@
 						}
 					],
 					"sid": 322700026647035
+				},
+				{
+					"eventType": "comment",
+					"text": "End of the level"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 313956929164766,
+							"parameters": {
+								"first-value": "Level1.At(next_position)",
+								"comparison": 0,
+								"second-value": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 464197046758896,
+							"parameters": {
+								"seconds": "5"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 592334565778872,
+							"parameters": {
+								"layer": "2",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 855987838702177,
+							"parameters": {
+								"layer": "2",
+								"interactive": true
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "LvCompleteScore",
+							"sid": 226337846087950,
+							"parameters": {
+								"text": "user_score"
+							}
+						}
+					],
+					"sid": 247152884077130
 				}
 			]
 		}

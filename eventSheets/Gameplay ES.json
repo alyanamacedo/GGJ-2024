@@ -33,6 +33,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "user_score",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 615239717617360
+		},
+		{
+			"eventType": "variable",
 			"name": "level_data_loaded",
 			"type": "boolean",
 			"initialValue": "false",
@@ -66,6 +76,15 @@
 					"sid": 892637626623368,
 					"parameters": {
 						"variable": "next_position",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 255850691909539,
+					"parameters": {
+						"variable": "user_score",
 						"value": "0"
 					}
 				},
@@ -124,6 +143,24 @@
 					"parameters": {
 						"tag": "\"hey\"",
 						"file": "Level1.json"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 765406671848768,
+					"parameters": {
+						"layer": "2",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-interactive",
+					"objectClass": "System",
+					"sid": 417424798730849,
+					"parameters": {
+						"layer": "2",
+						"interactive": false
 					}
 				}
 			],
@@ -671,9 +708,27 @@
 									]
 								},
 								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 678906608235245,
+									"parameters": {
+										"variable": "user_score",
+										"value": "hittable.pts_score"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "score_txt",
+									"sid": 663155210825752,
+									"parameters": {
+										"text": "user_score"
+									}
+								},
+								{
 									"id": "set-instvar-value",
 									"objectClass": "score_txt",
 									"sid": 554664451953725,
+									"disabled": true,
 									"parameters": {
 										"instance-variable": "score",
 										"value": "score_txt.score+hittable.pts_score"
@@ -683,6 +738,7 @@
 									"id": "set-text",
 									"objectClass": "score_txt",
 									"sid": 835880192127796,
+									"disabled": true,
 									"parameters": {
 										"text": "Functions.ScoreToText(score_txt.score)"
 									}
@@ -1001,6 +1057,7 @@
 			"conditions": [],
 			"actions": [],
 			"sid": 579521136477969,
+			"disabled": true,
 			"children": [
 				{
 					"eventType": "block",
@@ -1026,7 +1083,8 @@
 							}
 						}
 					],
-					"sid": 275407788156859
+					"sid": 275407788156859,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -1039,6 +1097,7 @@
 					],
 					"actions": [],
 					"sid": 942917515014455,
+					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -1064,7 +1123,8 @@
 									}
 								}
 							],
-							"sid": 985459689828564
+							"sid": 985459689828564,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -1077,6 +1137,7 @@
 							],
 							"actions": [],
 							"sid": 745318653065021,
+							"disabled": true,
 							"children": [
 								{
 									"eventType": "block",
@@ -1102,7 +1163,8 @@
 											}
 										}
 									],
-									"sid": 151211724859725
+									"sid": 151211724859725,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -1123,7 +1185,8 @@
 											}
 										}
 									],
-									"sid": 928277640867172
+									"sid": 928277640867172,
+									"disabled": true
 								}
 							]
 						}
@@ -1162,9 +1225,9 @@
 				{
 					"id": "on-touched-object",
 					"objectClass": "Touch",
-					"sid": 333871429752489,
+					"sid": 384980220728618,
 					"parameters": {
-						"object": "PauseButton"
+						"object": "GameplayPause"
 					}
 				}
 			],
@@ -1185,6 +1248,15 @@
 					],
 					"actions": [
 						{
+							"id": "set-animation",
+							"objectClass": "GameplayPause",
+							"sid": 176914457560342,
+							"parameters": {
+								"animation": "\"Pause\"",
+								"from": "beginning"
+							}
+						},
+						{
 							"id": "remove-all-effects",
 							"objectClass": "Audio",
 							"sid": 657535102292995,
@@ -1204,17 +1276,17 @@
 						{
 							"id": "set-time-scale",
 							"objectClass": "System",
-							"sid": 979617648230283,
+							"sid": 372720767759879,
 							"parameters": {
-								"time-scale": "0.3"
+								"time-scale": "0.5"
 							}
 						},
 						{
 							"id": "wait",
 							"objectClass": "System",
-							"sid": 237406641009654,
+							"sid": 450754806991352,
 							"parameters": {
-								"seconds": "2"
+								"seconds": "1"
 							}
 						},
 						{
@@ -1238,6 +1310,15 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "GameplayPause",
+							"sid": 646121997353614,
+							"parameters": {
+								"animation": "\"Play\"",
+								"from": "beginning"
+							}
+						},
 						{
 							"id": "add-filter-effect",
 							"objectClass": "Audio",
@@ -1301,6 +1382,64 @@
 				}
 			],
 			"sid": 170310342464013
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Level Complete",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 359103914256838,
+							"parameters": {
+								"object": "LvCompleteAgainYes"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 257705845552080,
+							"parameters": {
+								"layout": "Level01"
+							}
+						}
+					],
+					"sid": 411264967856393
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 243120612933377,
+							"parameters": {
+								"object": "LvCompleteAgainNo"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 288656384078851,
+							"parameters": {
+								"layout": "Title Screen"
+							}
+						}
+					],
+					"sid": 404419504663059
+				}
+			],
+			"sid": 596049958513293
 		}
 	],
 	"sid": 969464561165898
