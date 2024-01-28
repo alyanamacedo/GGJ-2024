@@ -52,161 +52,197 @@
 			"sid": 907112964496605
 		},
 		{
-			"eventType": "block",
-			"conditions": [
+			"eventType": "group",
+			"disabled": false,
+			"title": "Start of Layout",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
 				{
-					"id": "on-start-of-layout",
-					"objectClass": "System",
-					"sid": 759063397112099
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 400972108211875
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 405235877871224,
+							"parameters": {
+								"variable": "VisitedTitle",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 140302066061016,
+							"parameters": {
+								"variable": "next_position",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 345522763409334,
+							"parameters": {
+								"variable": "user_score",
+								"value": "0"
+							}
+						},
+						{
+							"callFunction": "PlayMusic",
+							"sid": 795237833614917,
+							"parameters": [
+								"\"MUS_Menu\"",
+								"-8",
+								"\"MUS\"",
+								"0"
+							]
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 297925938663365,
+							"disabled": true,
+							"parameters": {
+								"seconds": "3"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 384522785403559,
+							"disabled": true,
+							"parameters": {
+								"layout": "Title Screen"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "VFX_HammerHit",
+							"sid": 405847643346862,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "VFX_MicEffect",
+							"sid": 263045741737513,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"callFunction": "PlayAudio",
+							"sid": 893969657347388,
+							"parameters": [
+								"\"SFX_Applause+96\"",
+								"2",
+								"\"SFX_Applause\"",
+								"0",
+								true,
+								"3"
+							]
+						},
+						{
+							"id": "request-project-file",
+							"objectClass": "AJAX",
+							"sid": 292926861332727,
+							"parameters": {
+								"tag": "\"hey\"",
+								"file": "Level1.json"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 689762784333450,
+							"parameters": {
+								"layer": "2",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 895705157579178,
+							"parameters": {
+								"layer": "2",
+								"interactive": false
+							}
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "speaker",
+							"sid": 279865736534826,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "scale",
+								"end-x": "1.05",
+								"end-y": "1.05",
+								"time": "0.3",
+								"ease": "easeinoutsine",
+								"destroy-on-complete": "no",
+								"loop": "yes",
+								"ping-pong": "yes",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 599361663294002
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-completed",
+							"objectClass": "AJAX",
+							"sid": 827319992610910,
+							"parameters": {
+								"tag": "\"hey\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "load",
+							"objectClass": "Level1",
+							"sid": 347360220518081,
+							"parameters": {
+								"json": "AJAX.LastData"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Debug",
+							"sid": 447176465056949,
+							"disabled": true,
+							"parameters": {
+								"text": "AJAX.LastData"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 875023397290936,
+							"parameters": {
+								"variable": "level_data_loaded",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 105245821452727
 				}
 			],
-			"actions": [
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 612789806584384,
-					"parameters": {
-						"variable": "VisitedTitle",
-						"value": "true"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 892637626623368,
-					"parameters": {
-						"variable": "next_position",
-						"value": "0"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 255850691909539,
-					"parameters": {
-						"variable": "user_score",
-						"value": "0"
-					}
-				},
-				{
-					"callFunction": "PlayMusic",
-					"sid": 421862414939601,
-					"parameters": [
-						"\"MUS_Menu\"",
-						"-8",
-						"\"MUS\"",
-						"0"
-					]
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 246435148181075,
-					"disabled": true,
-					"parameters": {
-						"seconds": "3"
-					}
-				},
-				{
-					"id": "go-to-layout",
-					"objectClass": "System",
-					"sid": 270799238144541,
-					"disabled": true,
-					"parameters": {
-						"layout": "Title Screen"
-					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "VFX_HammerHit",
-					"sid": 688098607858476,
-					"parameters": {
-						"visibility": "invisible"
-					}
-				},
-				{
-					"callFunction": "PlayAudio",
-					"sid": 937561044334468,
-					"parameters": [
-						"\"SFX_Applause+96\"",
-						"2",
-						"\"SFX_Applause\"",
-						"0",
-						true,
-						"3"
-					]
-				},
-				{
-					"id": "request-project-file",
-					"objectClass": "AJAX",
-					"sid": 956711219681210,
-					"parameters": {
-						"tag": "\"hey\"",
-						"file": "Level1.json"
-					}
-				},
-				{
-					"id": "set-layer-visible",
-					"objectClass": "System",
-					"sid": 765406671848768,
-					"parameters": {
-						"layer": "2",
-						"visibility": "invisible"
-					}
-				},
-				{
-					"id": "set-layer-interactive",
-					"objectClass": "System",
-					"sid": 417424798730849,
-					"parameters": {
-						"layer": "2",
-						"interactive": false
-					}
-				}
-			],
-			"sid": 619032578253664
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-completed",
-					"objectClass": "AJAX",
-					"sid": 764161275777800,
-					"parameters": {
-						"tag": "\"hey\""
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "load",
-					"objectClass": "Level1",
-					"sid": 328687474284086,
-					"parameters": {
-						"json": "AJAX.LastData"
-					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "Debug",
-					"sid": 584346411757180,
-					"disabled": true,
-					"parameters": {
-						"text": "AJAX.LastData"
-					}
-				},
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 495760417293688,
-					"parameters": {
-						"variable": "level_data_loaded",
-						"value": "true"
-					}
-				}
-			],
-			"sid": 640361014636249
+			"sid": 765183008922838
 		},
 		{
 			"eventType": "block",
@@ -426,7 +462,26 @@
 					"isInverted": true
 				}
 			],
-			"actions": [],
+			"actions": [
+				{
+					"id": "tween-two-properties",
+					"objectClass": "target",
+					"sid": 141610766604738,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "scale",
+						"end-x": "1.05",
+						"end-y": "1.05",
+						"time": "0.2",
+						"ease": "easeinoutsine",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "yes",
+						"repeat-count": "1"
+					}
+				}
+			],
 			"sid": 355244984064122,
 			"children": [
 				{
@@ -494,6 +549,23 @@
 										true,
 										"hittable.pts_audicence"
 									]
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "VFX_MicEffect",
+									"sid": 907635212406182,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "VFX_MicEffect",
+									"sid": 780786258742872,
+									"parameters": {
+										"animation": "\"Animation 1\"",
+										"from": "beginning"
+									}
 								}
 							],
 							"sid": 530251147316566,
@@ -770,11 +842,32 @@
 									}
 								},
 								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 238900056966641,
+									"parameters": {
+										"object-to-create": "Points",
+										"layer": "1",
+										"x": "target.X-178/2",
+										"y": "target.y-178 - 20",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "Points",
+									"sid": 765435287890475,
+									"parameters": {
+										"text": "\"+\" & hittable.pts_score"
+									}
+								},
+								{
 									"id": "wait",
 									"objectClass": "System",
-									"sid": 312198779868862,
+									"sid": 723525529804582,
 									"parameters": {
-										"seconds": "0.2"
+										"seconds": "0.25"
 									}
 								},
 								{
@@ -785,6 +878,36 @@
 										"animation": "\"Idle\"",
 										"from": "beginning"
 									}
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "Points",
+									"sid": 589675076854537,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "position",
+										"end-x": "score_txt.X",
+										"end-y": "score_txt.y",
+										"time": "0.3",
+										"ease": "easeinoutelastic",
+										"destroy-on-complete": "yes",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"callFunction": "PlayAudio",
+									"sid": 191754047310917,
+									"parameters": [
+										"\"SFX_Laugh+96\"",
+										"2",
+										"\"SFX_Laugh\"",
+										"0",
+										true,
+										"5"
+									]
 								}
 							],
 							"sid": 641998157229903
@@ -1216,144 +1339,29 @@
 			"sid": 546314851525969
 		},
 		{
-			"eventType": "comment",
-			"text": "Quando acabar a fase der vaia ou aplauso dependendo do risometro"
-		},
-		{
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-touched-object",
-					"objectClass": "Touch",
-					"sid": 384980220728618,
+					"id": "on-any-animation-finished",
+					"objectClass": "VFX_MicEffect",
+					"sid": 216992304995745
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "VFX_MicEffect",
+					"sid": 715205794712466,
 					"parameters": {
-						"object": "GameplayPause"
+						"visibility": "invisible"
 					}
 				}
 			],
-			"actions": [],
-			"sid": 791040964146337,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 499112685641203,
-							"parameters": {
-								"variable": "is_paused"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation",
-							"objectClass": "GameplayPause",
-							"sid": 176914457560342,
-							"parameters": {
-								"animation": "\"Pause\"",
-								"from": "beginning"
-							}
-						},
-						{
-							"id": "remove-all-effects",
-							"objectClass": "Audio",
-							"sid": 657535102292995,
-							"parameters": {
-								"tag": "\"MUS\""
-							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 592293562225206,
-							"parameters": {
-								"variable": "is_paused",
-								"value": "false"
-							}
-						},
-						{
-							"id": "set-time-scale",
-							"objectClass": "System",
-							"sid": 372720767759879,
-							"parameters": {
-								"time-scale": "0.5"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 450754806991352,
-							"parameters": {
-								"seconds": "1"
-							}
-						},
-						{
-							"id": "set-time-scale",
-							"objectClass": "System",
-							"sid": 864244273808370,
-							"parameters": {
-								"time-scale": "1"
-							}
-						}
-					],
-					"sid": 774953343492732
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 660986233862144
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation",
-							"objectClass": "GameplayPause",
-							"sid": 646121997353614,
-							"parameters": {
-								"animation": "\"Play\"",
-								"from": "beginning"
-							}
-						},
-						{
-							"id": "add-filter-effect",
-							"objectClass": "Audio",
-							"sid": 496031636373826,
-							"parameters": {
-								"tag": "\"MUS\"",
-								"type": "low-pass",
-								"frequency": "350",
-								"detune": "0",
-								"q": "1",
-								"gain": "0",
-								"mix": "100"
-							}
-						},
-						{
-							"id": "set-time-scale",
-							"objectClass": "System",
-							"sid": 345028547099905,
-							"parameters": {
-								"time-scale": "0"
-							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 506003246012768,
-							"parameters": {
-								"variable": "is_paused",
-								"value": "true"
-							}
-						}
-					],
-					"sid": 312713705973637
-				}
-			]
+			"sid": 538630392797713
+		},
+		{
+			"eventType": "comment",
+			"text": "Quando acabar a fase der vaia ou aplauso dependendo do risometro"
 		},
 		{
 			"eventType": "block",
@@ -1382,6 +1390,152 @@
 				}
 			],
 			"sid": 170310342464013
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Pause Events",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 365352895950821,
+							"parameters": {
+								"object": "GameplayPause"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 164651689132793,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 175951381378838,
+									"parameters": {
+										"variable": "is_paused"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "GameplayPause",
+									"sid": 996484094301708,
+									"parameters": {
+										"animation": "\"Pause\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "remove-all-effects",
+									"objectClass": "Audio",
+									"sid": 329801659690629,
+									"parameters": {
+										"tag": "\"MUS\""
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 646075220366703,
+									"parameters": {
+										"variable": "is_paused",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-time-scale",
+									"objectClass": "System",
+									"sid": 164931151573293,
+									"parameters": {
+										"time-scale": "0.5"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 180268898130744,
+									"parameters": {
+										"seconds": "1"
+									}
+								},
+								{
+									"id": "set-time-scale",
+									"objectClass": "System",
+									"sid": 294412746537719,
+									"parameters": {
+										"time-scale": "1"
+									}
+								}
+							],
+							"sid": 795416825483998
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 405212133258721
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "GameplayPause",
+									"sid": 683646383820815,
+									"parameters": {
+										"animation": "\"Play\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "add-filter-effect",
+									"objectClass": "Audio",
+									"sid": 947494936759144,
+									"parameters": {
+										"tag": "\"MUS\"",
+										"type": "low-pass",
+										"frequency": "350",
+										"detune": "0",
+										"q": "1",
+										"gain": "0",
+										"mix": "100"
+									}
+								},
+								{
+									"id": "set-time-scale",
+									"objectClass": "System",
+									"sid": 576905035850015,
+									"parameters": {
+										"time-scale": "0"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 788614294708121,
+									"parameters": {
+										"variable": "is_paused",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 143452708511777
+						}
+					]
+				}
+			],
+			"sid": 342656889200780
 		},
 		{
 			"eventType": "group",

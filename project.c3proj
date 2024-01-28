@@ -77,6 +77,13 @@
 			"bundled": false
 		},
 		{
+			"type": "behavior",
+			"id": "Tween",
+			"name": "Tween",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
 			"type": "effect",
 			"id": "noise",
 			"name": "Noise",
@@ -87,15 +94,7 @@
 	"uniqueId": "l1hc2xznznw",
 	"objectTypes": {
 		"items": [
-			"TargetScore",
-			"Debug",
-			"backgrounbdMask_blue",
-			"LvCompleteTitle",
-			"LvCompleteScoreLabel",
-			"LvCompleteScore",
-			"LvCompleteAgainLabel",
-			"LvCompleteAgainYes",
-			"LvCompleteAgainNo"
+			"Debug"
 		],
 		"subfolders": [
 			{
@@ -141,7 +140,12 @@
 					"VFX_HammerHit",
 					"hitAreaNear",
 					"PauseButton",
-					"GameplayPause"
+					"GameplayPause",
+					"Points",
+					"FeedbackBad",
+					"FeedbackGood",
+					"VFX_MicEffect",
+					"backgrounbdMask_blue"
 				],
 				"subfolders": [],
 				"name": "MainScreen"
@@ -175,6 +179,18 @@
 				],
 				"subfolders": [],
 				"name": "TutorialScreen"
+			},
+			{
+				"items": [
+					"LvCompleteAgainLabel",
+					"LvCompleteAgainNo",
+					"LvCompleteAgainYes",
+					"LvCompleteScore",
+					"LvCompleteScoreLabel",
+					"LvCompleteTitle"
+				],
+				"subfolders": [],
+				"name": "LvComplete"
 			}
 		]
 	},
