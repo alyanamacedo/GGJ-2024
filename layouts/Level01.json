@@ -7,35 +7,6 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "background",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": false,
-						"live-preview": false
-					},
-					"uid": 9,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 0,
-						"y": 0,
-						"width": 1921,
-						"height": 1079,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
 					"type": "audience_bg",
 					"properties": {
 						"initially-visible": true,
@@ -903,24 +874,82 @@
 					}
 				},
 				{
-					"type": "background_mask",
+					"type": "GAMEPLAYLaughTrack",
 					"properties": {
 						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 37,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": -6,
+						"y": -1129,
+						"width": 1921,
+						"height": 1079,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "hitAreaNear",
+					"properties": {
+						"initially-visible": false,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 38,
+					"uid": 571895,
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 0,
-						"y": 0,
-						"width": 1921,
-						"height": 1079,
-						"originX": 0,
-						"originY": 0,
+						"x": 900,
+						"y": 357,
+						"width": 50,
+						"height": 398,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "backgrounbdMask_blue",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 103749,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 960,
+						"y": 540,
+						"width": 1920,
+						"height": 1080,
+						"originX": 0.5,
+						"originY": 0.5,
 						"color": [
 							1,
 							1,
@@ -948,6 +977,35 @@
 						"y": 367,
 						"width": 178,
 						"height": 178,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "player",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Idle",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 27,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 350,
+						"y": 341,
+						"width": 359,
+						"height": 399,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -1035,93 +1093,6 @@
 						"y": 855,
 						"width": 252,
 						"height": 270,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "GAMEPLAYLaughTrack",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Default",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 37,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": -6,
-						"y": -1129,
-						"width": 1921,
-						"height": 1079,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "player",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Idle",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 27,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 350,
-						"y": 341,
-						"width": 359,
-						"height": 399,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "hitAreaNear",
-					"properties": {
-						"initially-visible": false,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 571895,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 900,
-						"y": 357,
-						"width": 50,
-						"height": 398,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -1474,35 +1445,6 @@
 					}
 				},
 				{
-					"type": "VFX_HammerHit",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Hit",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 272458,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 643,
-						"y": 358,
-						"width": 127,
-						"height": 119,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
 					"type": "TargetScore",
 					"properties": {
 						"text": "+20",
@@ -1816,12 +1758,41 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 1267,
-						"y": 1791,
+						"x": 236,
+						"y": 1225,
 						"width": 1417,
 						"height": 637,
 						"originX": 0,
 						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "VFX_HammerHit",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Hit",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 272458,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 643,
+						"y": 358,
+						"width": 127,
+						"height": 119,
+						"originX": 0.5,
+						"originY": 0.5,
 						"color": [
 							1,
 							1,

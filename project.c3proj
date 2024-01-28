@@ -88,7 +88,8 @@
 	"objectTypes": {
 		"items": [
 			"TargetScore",
-			"Debug"
+			"Debug",
+			"backgrounbdMask_blue"
 		],
 		"subfolders": [
 			{
@@ -120,8 +121,6 @@
 				"items": [
 					"audience_bg",
 					"audience_pointer",
-					"background",
-					"background_mask",
 					"belt",
 					"belt2",
 					"btn",
