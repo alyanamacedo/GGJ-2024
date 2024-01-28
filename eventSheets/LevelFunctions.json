@@ -126,6 +126,16 @@
 								"instance-variable": "pts_audicence",
 								"value": "80"
 							}
+						},
+						{
+							"id": "move-to-bottom",
+							"objectClass": "hittable",
+							"sid": 582643504533813
+						},
+						{
+							"id": "move-to-bottom",
+							"objectClass": "belt",
+							"sid": 401146284353995
 						}
 					],
 					"sid": 111995719776439
@@ -193,6 +203,16 @@
 								"instance-variable": "pts_audicence",
 								"value": "120"
 							}
+						},
+						{
+							"id": "move-to-bottom",
+							"objectClass": "hittable",
+							"sid": 118021789924221
+						},
+						{
+							"id": "move-to-bottom",
+							"objectClass": "belt",
+							"sid": 626801113108755
 						}
 					],
 					"sid": 954337415464516
@@ -260,6 +280,16 @@
 								"instance-variable": "pts_audicence",
 								"value": "20"
 							}
+						},
+						{
+							"id": "move-to-bottom",
+							"objectClass": "hittable",
+							"sid": 451378016089213
+						},
+						{
+							"id": "move-to-bottom",
+							"objectClass": "belt",
+							"sid": 131137371383957
 						}
 					],
 					"sid": 799734761176286
@@ -327,6 +357,16 @@
 								"instance-variable": "pts_audicence",
 								"value": "20"
 							}
+						},
+						{
+							"id": "move-to-bottom",
+							"objectClass": "hittable",
+							"sid": 379242305988166
+						},
+						{
+							"id": "move-to-bottom",
+							"objectClass": "belt",
+							"sid": 840848776719914
 						}
 					],
 					"sid": 322700026647035
