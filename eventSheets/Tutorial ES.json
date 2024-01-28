@@ -1,0 +1,30 @@
+{
+	"name": "Tutorial ES",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 461628467313571,
+					"parameters": {
+						"object": "TutorialPlay"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 864615869098755,
+					"parameters": {
+						"layout": "Level01"
+					}
+				}
+			],
+			"sid": 322893971292590
+		}
+	],
+	"sid": 591953240024728
+}

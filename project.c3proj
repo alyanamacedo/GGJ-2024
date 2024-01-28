@@ -8,6 +8,20 @@
 	"usedAddons": [
 		{
 			"type": "plugin",
+			"id": "AJAX",
+			"name": "AJAX",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Arr",
+			"name": "Array",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Audio",
 			"name": "Audio",
 			"author": "Scirra",
@@ -73,8 +87,8 @@
 	"uniqueId": "l1hc2xznznw",
 	"objectTypes": {
 		"items": [
-			"VFX_HammerHit",
-			"TargetScore"
+			"TargetScore",
+			"Debug"
 		],
 		"subfolders": [
 			{
@@ -93,7 +107,11 @@
 				"items": [
 					"Audio",
 					"Keyboard",
-					"Touch"
+					"Touch",
+					"Level1",
+					"Level2",
+					"Level3",
+					"AJAX"
 				],
 				"subfolders": [],
 				"name": "System"
@@ -114,7 +132,10 @@
 					"player",
 					"score_txt",
 					"speaker",
-					"target"
+					"target",
+					"VFX_HammerHit",
+					"hitAreaNear",
+					"PauseButton"
 				],
 				"subfolders": [],
 				"name": "MainScreen"
@@ -122,10 +143,32 @@
 			{
 				"items": [
 					"CreditsBackButton",
-					"CreditsBg"
+					"CreditsBg",
+					"TutorialPlay"
 				],
 				"subfolders": [],
 				"name": "CreditsScreen"
+			},
+			{
+				"items": [
+					"TutorialButton1",
+					"TutorialButton2",
+					"TutorialHaters",
+					"TutorialJoke1",
+					"TutorialJoke2",
+					"TutorialLabel1",
+					"TutorialLabel2",
+					"TutorialLabel3",
+					"TutorialLabel4",
+					"TutorialLabel5",
+					"TutorialLaughometer",
+					"TutorialLiker1",
+					"TutorialLiker2",
+					"TutorialTarget",
+					"TutorialTitle"
+				],
+				"subfolders": [],
+				"name": "TutorialScreen"
 			}
 		]
 	},
@@ -140,7 +183,8 @@
 			"Level01",
 			"Audio Test",
 			"Title Screen",
-			"Credits Screen"
+			"Credits Screen",
+			"Tutorial Screen"
 		],
 		"subfolders": []
 	},
@@ -149,7 +193,9 @@
 			"Gameplay ES",
 			"AudioFunctions",
 			"Title ES",
-			"Credits ES"
+			"Credits ES",
+			"LevelFunctions",
+			"Tutorial ES"
 		],
 		"subfolders": []
 	},
@@ -494,7 +540,16 @@
 			"subfolders": []
 		},
 		"general": {
-			"items": [],
+			"items": [
+				{
+					"name": "Level1.json",
+					"type": "application/json",
+					"sid": 847685367325535,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		}
 	},

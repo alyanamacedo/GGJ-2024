@@ -22,6 +22,26 @@
 			"sid": 618185881594989
 		},
 		{
+			"eventType": "variable",
+			"name": "is_paused",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 646186006984273
+		},
+		{
+			"eventType": "variable",
+			"name": "level_data_loaded",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 907112964496605
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -38,6 +58,15 @@
 					"parameters": {
 						"variable": "VisitedTitle",
 						"value": "true"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 892637626623368,
+					"parameters": {
+						"variable": "next_position",
+						"value": "0"
 					}
 				},
 				{
@@ -87,9 +116,60 @@
 						true,
 						"3"
 					]
+				},
+				{
+					"id": "request-project-file",
+					"objectClass": "AJAX",
+					"sid": 956711219681210,
+					"parameters": {
+						"tag": "\"hey\"",
+						"file": "Level1.json"
+					}
 				}
 			],
 			"sid": 619032578253664
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-completed",
+					"objectClass": "AJAX",
+					"sid": 764161275777800,
+					"parameters": {
+						"tag": "\"hey\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "load",
+					"objectClass": "Level1",
+					"sid": 328687474284086,
+					"parameters": {
+						"json": "AJAX.LastData"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "Debug",
+					"sid": 584346411757180,
+					"disabled": true,
+					"parameters": {
+						"text": "AJAX.LastData"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 495760417293688,
+					"parameters": {
+						"variable": "level_data_loaded",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 640361014636249
 		},
 		{
 			"eventType": "block",
@@ -207,77 +287,37 @@
 								"animation": "\"Speaker\"",
 								"from": "beginning"
 							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 753192853192719,
-							"parameters": {
-								"variable": "next_target",
-								"value": "\"joke\""
-							}
 						}
 					],
 					"sid": 847864997615206,
 					"isOrBlock": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "hittable",
-							"sid": 101771660849524,
-							"parameters": {
-								"instance-variable": "type",
-								"comparison": 0,
-								"value": "\"hater\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 331040561544479,
-							"parameters": {
-								"variable": "next_target",
-								"value": "\"hater\""
-							}
-						}
-					],
-					"sid": 105229288216111,
-					"isOrBlock": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "hittable",
-							"sid": 864633045142743,
-							"parameters": {
-								"instance-variable": "type",
-								"comparison": 0,
-								"value": "\"liker\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 283353634079669,
-							"parameters": {
-								"variable": "next_target",
-								"value": "\"liker\""
-							}
-						}
-					],
-					"sid": 905921049945360,
-					"isOrBlock": true
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "hitAreaNear",
+					"sid": 785723698615723,
+					"parameters": {
+						"object": "hittable"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 636334033747139,
+					"parameters": {
+						"variable": "next_target",
+						"value": "hittable.type"
+					}
+				}
+			],
+			"sid": 203006410727845
 		},
 		{
 			"eventType": "block",
@@ -289,6 +329,15 @@
 					"parameters": {
 						"object": "btn"
 					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 392655041380912,
+					"parameters": {
+						"variable": "is_paused"
+					},
+					"isInverted": true
 				}
 			],
 			"actions": [
@@ -329,6 +378,15 @@
 					"parameters": {
 						"object": "btn"
 					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 177424556244726,
+					"parameters": {
+						"variable": "is_paused"
+					},
+					"isInverted": true
 				}
 			],
 			"actions": [],
@@ -720,7 +778,7 @@
 								{
 									"id": "compare-eventvar",
 									"objectClass": "System",
-									"sid": 117406152397102,
+									"sid": 262164309742953,
 									"parameters": {
 										"variable": "next_target",
 										"comparison": 0,
@@ -731,7 +789,7 @@
 							"actions": [
 								{
 									"callFunction": "PlayAudio",
-									"sid": 812800816727970,
+									"sid": 161580100924099,
 									"parameters": [
 										"\"SFX_HammerMiss\"",
 										"-1",
@@ -740,9 +798,35 @@
 										false,
 										"0"
 									]
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "player",
+									"sid": 486847032790192,
+									"parameters": {
+										"animation": "\"Hammer\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 145283510618091,
+									"parameters": {
+										"seconds": "0.2"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "player",
+									"sid": 194220590718893,
+									"parameters": {
+										"animation": "\"Idle\"",
+										"from": "beginning"
+									}
 								}
 							],
-							"sid": 175171111849262
+							"sid": 269488320803491
 						}
 					]
 				}
@@ -1071,6 +1155,152 @@
 		{
 			"eventType": "comment",
 			"text": "Quando acabar a fase der vaia ou aplauso dependendo do risometro"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 333871429752489,
+					"parameters": {
+						"object": "PauseButton"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 791040964146337,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 499112685641203,
+							"parameters": {
+								"variable": "is_paused"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "remove-all-effects",
+							"objectClass": "Audio",
+							"sid": 657535102292995,
+							"parameters": {
+								"tag": "\"MUS\""
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 592293562225206,
+							"parameters": {
+								"variable": "is_paused",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 979617648230283,
+							"parameters": {
+								"time-scale": "0.3"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 237406641009654,
+							"parameters": {
+								"seconds": "2"
+							}
+						},
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 864244273808370,
+							"parameters": {
+								"time-scale": "1"
+							}
+						}
+					],
+					"sid": 774953343492732
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 660986233862144
+						}
+					],
+					"actions": [
+						{
+							"id": "add-filter-effect",
+							"objectClass": "Audio",
+							"sid": 496031636373826,
+							"parameters": {
+								"tag": "\"MUS\"",
+								"type": "low-pass",
+								"frequency": "350",
+								"detune": "0",
+								"q": "1",
+								"gain": "0",
+								"mix": "100"
+							}
+						},
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 345028547099905,
+							"parameters": {
+								"time-scale": "0"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 506003246012768,
+							"parameters": {
+								"variable": "is_paused",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 312713705973637
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 105733296379355,
+					"parameters": {
+						"interval-seconds": "0.5"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 781666325219010,
+					"parameters": {
+						"variable": "level_data_loaded"
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "draw_next",
+					"sid": 789838463022873
+				}
+			],
+			"sid": 170310342464013
 		}
 	],
 	"sid": 969464561165898

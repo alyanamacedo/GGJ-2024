@@ -1,0 +1,58 @@
+{
+	"name": "TutorialLaughometer",
+	"plugin-id": "Sprite",
+	"sid": 702465223090212,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 927,
+						"height": 345,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9500456,
+						"collisionPoly": {
+							"points": [
+								0.7756202804746494,
+								0,
+								0.9741100323624595,
+								0.020289855072463767,
+								0.9946062567421791,
+								0.09855072463768116,
+								0.9277238403451996,
+								0.9797101449275363,
+								0.8629989212513485,
+								0.9797101449275363,
+								0.03559870550161812,
+								0.8666666666666667,
+								0.005393743257820928,
+								0.1536231884057971,
+								0.05501618122977346,
+								0.04057971014492753
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 739418546996559,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
