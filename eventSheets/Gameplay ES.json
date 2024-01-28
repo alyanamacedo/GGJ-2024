@@ -61,6 +61,15 @@
 					}
 				},
 				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 892637626623368,
+					"parameters": {
+						"variable": "next_position",
+						"value": "0"
+					}
+				},
+				{
 					"callFunction": "PlayMusic",
 					"sid": 421862414939601,
 					"parameters": [

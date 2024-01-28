@@ -143,10 +143,32 @@
 			{
 				"items": [
 					"CreditsBackButton",
-					"CreditsBg"
+					"CreditsBg",
+					"TutorialPlay"
 				],
 				"subfolders": [],
 				"name": "CreditsScreen"
+			},
+			{
+				"items": [
+					"TutorialButton1",
+					"TutorialButton2",
+					"TutorialHaters",
+					"TutorialJoke1",
+					"TutorialJoke2",
+					"TutorialLabel1",
+					"TutorialLabel2",
+					"TutorialLabel3",
+					"TutorialLabel4",
+					"TutorialLabel5",
+					"TutorialLaughometer",
+					"TutorialLiker1",
+					"TutorialLiker2",
+					"TutorialTarget",
+					"TutorialTitle"
+				],
+				"subfolders": [],
+				"name": "TutorialScreen"
 			}
 		]
 	},
@@ -161,7 +183,8 @@
 			"Level01",
 			"Audio Test",
 			"Title Screen",
-			"Credits Screen"
+			"Credits Screen",
+			"Tutorial Screen"
 		],
 		"subfolders": []
 	},
@@ -171,7 +194,8 @@
 			"AudioFunctions",
 			"Title ES",
 			"Credits ES",
-			"LevelFunctions"
+			"LevelFunctions",
+			"Tutorial ES"
 		],
 		"subfolders": []
 	},

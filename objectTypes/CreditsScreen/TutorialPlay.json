@@ -1,0 +1,14 @@
+{
+	"name": "TutorialPlay",
+	"plugin-id": "Text",
+	"sid": 487756683808392,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "noise",
+			"name": "Noise"
+		}
+	]
+}
